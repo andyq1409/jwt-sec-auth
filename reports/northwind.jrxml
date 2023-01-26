@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="northwind2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="4e3f6fe8-bfc1-4ad3-a18f-e93729da5d96">
+    <queryString language="jsonql">
+        <![CDATA[Northwind.Customers.*]]>
+    </queryString>
+    <field name="ContactName" class="java.lang.String">
+        <property name="net.sf.jasperreports.json.field.expression" value="ContactName"/>
+        <fieldDescription><![CDATA[ContactName]]></fieldDescription>
+    </field>
+    <field name="Address" class="java.lang.String">
+        <property name="net.sf.jasperreports.json.field.expression" value="Address"/>
+        <fieldDescription><![CDATA[Address]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="19" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="545" height="19" uuid="eefa656f-659e-45c4-8e85-cab538880f5f"/>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Customers"]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="21" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="230" height="16" uuid="cea77c9a-8a09-4aa0-a19c-7427d5db1788"/>
+                <textElement>
+                    <font isBold="true" isUnderline="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Nazwa"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="2" width="230" height="16" uuid="55cebdf4-1d38-4953-bb5a-f53400ebf553"/>
+                <textElement>
+                    <font isBold="true" isUnderline="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Adres" + " .."]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="230" height="20" uuid="9c2a9244-3a9c-46b0-91c0-76e3e4bac6d9"/>
+                <textFieldExpression><![CDATA[$F{ContactName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="0" width="230" height="20" uuid="06ce23de-756f-4b76-b46a-4d9791567f74">
+                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{Address}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="54" splitType="Stretch">
+            <textField>
+                <reportElement x="260" y="10" width="160" height="30" uuid="53b9fd89-980d-47bf-94f3-55038472660e"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="420" y="10" width="130" height="30" uuid="491363d2-1fa9-44e7-bdf2-cb2af10825d2"/>
+                <textElement textAlignment="Left"/>
+                <textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

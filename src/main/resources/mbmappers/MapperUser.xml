@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="jwt.sec.auth.jmappers.user.MapperUser">
+
+    <select id="findByUsername" resultType="jwt.sec.auth.domain.user.DbUser"
+            parameterType="String">
+        SELECT ID,
+               USERNAME,
+               PASSWORD,
+               NAZWISKO,
+               IMIE,
+               EMAIL,
+               LOCKED,
+               DATA_OD,
+               DATA_DO,
+               DATA_HASLA
+        from jwt_user
+        where username = #{login}
+    </select>
+
+    <select id="filteredUsers" resultType="jwt.sec.auth.domain.user.DbUser"
+            parameterType="String">
+        SELECT ID,
+               USERNAME,
+               PASSWORD,
+               NAZWISKO,
+               IMIE,
+               EMAIL,
+               LOCKED,
+               DATA_OD,
+               DATA_DO,
+               DATA_HASLA
+        from jwt_user
+        where username like #{param}
+        or nazwisko like #{param}
+    </select>
+
+    <select id="getUsrRole" resultType="String" parameterType="Long">
+        select rr.code_role
+        from jwt_user_role ur,
+             jwt_roles rr
+        where ur.id_role
+            = rr.id_role
+          and ur.id_user = #{idusr}
+    </select>
+
+</mapper>

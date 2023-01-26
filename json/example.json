@@ -1,0 +1,1067 @@
+{
+  "id": "1b1c14bf-4bf2-4501-b28b-2b98c4919114",
+  "payload": {
+    "rfq": {
+      "number": "20001202",
+      "dateFrom": "2020-10-08",
+      "offer": {
+        "offerNumber": "20001202/OCOG/1",
+        "status": "DRAFT",
+        "issueDate": null,
+        "validDate": null,
+        "applicationDate": null,
+        "period": {
+          "fromDate": null,
+          "toDate": null
+        },
+        "productId": {
+          "code": "OCOG",
+          "productVersion": 0
+        },
+        "variants": [
+          {
+            "number": "20001202/OCOG/1/1",
+            "premium": {
+              "amount": 21390.52,
+              "currency": "PLN"
+            },
+            "premiumValue": "21 390,52",
+            "premiumCurrency": "PLN",
+            "premiumNote": null,
+            "policyLines": [
+              {
+                "code": "OCOG_N",
+                "offerings": [
+                  {
+                    "code": "OFF_BASIC",
+                    "sections": [
+                      {
+                        "code": "SEC_OCOG",
+                        "insuredObjects": [
+                          {
+                            "code": "IO_ACTIVITY",
+                            "attributes": [
+                              {
+                                "code": "OAC_OCOG",
+                                "name": "Przedmiot i zakres",
+                                "description": null,
+                                "params": [
+                                  {
+                                    "code": "code",
+                                    "type": "string",
+                                    "value": "OAC_ALL"
+                                  },
+                                  {
+                                    "code": "value",
+                                    "type": "string",
+                                    "value": "Określona w umowie ubezpieczenia odpowiedzialność cywilna deliktowa lub kontraktowa za Szkody wyrządzone Osobie trzeciej, którą w myśl przepisów prawa Ubezpieczony ponosi:- w związku z prowadzeniem działalności lub posiadaniem rzeczy- za Produkt- za wykonane usługi"
+                                  }
+                                ],
+                                "children": [
+                                ]
+                              },
+                              {
+                                "code": "TP_OCOG",
+                                "name": "Zakres terytorialny",
+                                "description": null,
+                                "params": [
+                                  {
+                                    "code": "code",
+                                    "type": "string",
+                                    "value": "TER_OWU"
+                                  },
+                                  {
+                                    "code": "value",
+                                    "type": "string",
+                                    "value": "Cały świat, z zastrzeżeniem postanowień Klauzuli Nr 6,  Klauzuli Nr 7 oraz  podlimitu odpowiedzialności dla Wypadków ubezpieczeniowych powstałych na terytorium USA oraz Kanady wraz z ich terytoriami zależnymi."
+                                  }
+                                ],
+                                "children": [
+                                ]
+                              },
+                              {
+                                "code": "ACT_OCOG",
+                                "name": "Grupa działalności",
+                                "description": null,
+                                "params": [
+                                  {
+                                    "code": "TURNOVER",
+                                    "type": "MONEY",
+                                    "value": "2000000"
+                                  },
+                                  {
+                                    "code": "ACTIVITY_DESCRIPTION",
+                                    "type": "DESCRIPTION",
+                                    "value": "Działalność objęta ubezpieczeniem"
+                                  },
+                                  {
+                                    "code": "PRODUCT_DESCRIPTION",
+                                    "type": "DESCRIPTION",
+                                    "value": null
+                                  }
+                                ],
+                                "children": [
+                                  {
+                                    "code": "H01",
+                                    "name": "HANDEL DETALICZNY",
+                                    "description": "Ssprzedaż detaliczna - wszystkie PKD z grupy 47\nstacje paliw\noraz\nSprzedaż detaliczna części i akcesoriów do pojazdów mechanicznych",
+                                    "params": [
+                                      {
+                                        "code": "SHARE",
+                                        "type": "STRING",
+                                        "value": null
+                                      },
+                                      {
+                                        "code": "LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": "true"
+                                      },
+                                      {
+                                        "code": "CATEGORY",
+                                        "type": "STRING",
+                                        "value": null
+                                      },
+                                      {
+                                        "code": "AUTO_LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": "false"
+                                      }
+                                    ],
+                                    "children": [
+                                      {
+                                        "code": "PRODUCT_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "ACTIVITY_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "TURNOVER",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "code": "A02",
+                                    "name": "ADMINISTRACJA CENTRALNA",
+                                    "description": "Sądy, prokuratura, ministerstwa, urzędy/Izby skarbowe oraz inne organy i urzędy państwowe",
+                                    "params": [
+                                      {
+                                        "code": "AUTO_LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": "false"
+                                      },
+                                      {
+                                        "code": "LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": null
+                                      }
+                                    ],
+                                    "children": [
+                                      {
+                                        "code": "TURNOVER",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "ACTIVITY_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "PRODUCT_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "code": "A01",
+                                    "name": "ADMINISTRACJA SAMORZĄDOWA",
+                                    "description": "Organy administracji państwowej samorządowej w zakresie działalności statutowej (w tym działalność OSP, jeżeli nie stanowi samodzielnego ryzyka) ORAZ Wszelkie podmioty statutowo zajmujące się zarządzaniem drogami",
+                                    "params": [
+                                      {
+                                        "code": "LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": null
+                                      },
+                                      {
+                                        "code": "AUTO_LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": "true"
+                                      }
+                                    ],
+                                    "children": [
+                                      {
+                                        "code": "KILOMETERS_NO",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "BUDGET",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "PRODUCT_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "ACTIVITY_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "code": "N01",
+                                    "name": "NIERUCHOMOŚCI MIESZKANIOWE",
+                                    "description": "Wspólnoty Mieszkaniowe, Spółdzielnie Mieszkaniowe, TBS i inne przypadki posiadania i/lub zarządzania nieruchomościami mieszkaniowymi",
+                                    "params": [
+                                      {
+                                        "code": "AUTO_LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": "false"
+                                      },
+                                      {
+                                        "code": "LEADING",
+                                        "type": "BOOLEAN",
+                                        "value": null
+                                      }
+                                    ],
+                                    "children": [
+                                      {
+                                        "code": "ACTIVITY_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "PRODUCT_DESCRIPTION",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      },
+                                      {
+                                        "code": "LOCALS_NO",
+                                        "name": "",
+                                        "description": "",
+                                        "params": [
+                                        ],
+                                        "children": [
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "coverages": [
+                              {
+                                "code": "COV_BASIC",
+                                "name": "Zakres podstawowy",
+                                "title": "Zabezpieczenie sądowe - zgodnie z §9 ust 1 pkt 5 OWU",
+                                "content": "Zakres podstawowy",
+                                "cardinal": 1,
+                                "position": 1,
+                                "premium": {
+                                  "amount": 13374.14,
+                                  "currency": "PLN"
+                                },
+                                "isOwu": null,
+                                "indemnities": [
+                                  {
+                                    "type": "FIRST_RISK",
+                                    "name": "Suma gwarancyjna na jeden wypadek",
+                                    "value": "1 000 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 1
+                                  },
+                                  {
+                                    "type": "ALL_RISKS",
+                                    "name": "Suma gwarancyjna na wszystkie wypadki",
+                                    "value": "1 000 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 2
+                                  }
+                                ],
+                                "limits": [
+                                  {
+                                    "name": "Zabezpieczenia sądowe",
+                                    "subLimits": [
+                                      {
+                                        "type": "FIRST_RISK",
+                                        "name": "Podlimit na jeden wypadek",
+                                        "value": "500 000,00",
+                                        "currency": "PLN",
+                                        "position": 1
+                                      },
+                                      {
+                                        "type": "ALL_RISKS",
+                                        "name": "Podlimit na wszystkie wypadki",
+                                        "value": "500 000,00",
+                                        "currency": "PLN",
+                                        "position": 2
+                                      }
+                                    ],
+                                    "sameAsBase": null,
+                                    "limitDescription": null,
+                                    "combinedLimits": false,
+                                    "title": "Zabezpieczenie sądowe - zgodnie z §9 ust 1 pkt 5 OWU",
+                                    "position": 0
+                                  },
+                                  {
+                                    "name": "OC za produkt",
+                                    "subLimits": [
+                                      {
+                                        "type": "FIRST_RISK",
+                                        "name": "Podlimit na jeden wypadek",
+                                        "value": "500,00",
+                                        "currency": "PLN",
+                                        "position": 1
+                                      },
+                                      {
+                                        "type": "ALL_RISKS",
+                                        "name": "Podlimit na wszystkie wypadki",
+                                        "value": "500,00",
+                                        "currency": "PLN",
+                                        "position": 2
+                                      }
+                                    ],
+                                    "sameAsBase": null,
+                                    "limitDescription": null,
+                                    "combinedLimits": false,
+                                    "title": "podlimit dla OC za produkt",
+                                    "position": 1
+                                  },
+                                  {
+                                    "name": "Podlimit uniwersalny",
+                                    "subLimits": [
+                                      {
+                                        "type": "UNIVERSAL_FIRST_RISK",
+                                        "name": "",
+                                        "value": "20 000,00",
+                                        "currency": "PLN",
+                                        "position": 1
+                                      },
+                                      {
+                                        "type": "UNIVERSAL_ALL_RISKS",
+                                        "name": "",
+                                        "value": "20 000,00",
+                                        "currency": "PLN",
+                                        "position": 2
+                                      }
+                                    ],
+                                    "sameAsBase": null,
+                                    "limitDescription": "Podlimit uniwersalny",
+                                    "combinedLimits": false,
+                                    "title": "Podlimit uniwersalny",
+                                    "position": 2
+                                  }
+                                ],
+                                "deductibles": [
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "AMOUNT",
+                                    "name": "Zabezpieczenie sądowe - zgodnie z §9 ust 1 pkt 5 OWU",
+                                    "title": "Dla wszystkich Wypadków Ubezpieczeniowych, dla których nie ustanowiono odrębnej franszyzy",
+                                    "value": "1 000,00",
+                                    "currency": "PLN",
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 0,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  },
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "MIXED",
+                                    "name": "Zabezpieczenie sądowe - zgodnie z §9 ust 1 pkt 5 OWU",
+                                    "title": "Franszyza OC za produkt",
+                                    "value": "10 000,00",
+                                    "currency": "PLN",
+                                    "percent": "10",
+                                    "closureAmount": null,
+                                    "closure": false,
+                                    "opening": true,
+                                    "conditionCode": "SETTLEMENT",
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 1,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  },
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "AMOUNT",
+                                    "name": "Zabezpieczenie sądowe - zgodnie z §9 ust 1 pkt 5 OWU",
+                                    "title": "Franszyza dodatkowa",
+                                    "value": "",
+                                    "currency": "",
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": "Wykupiona z zakresu podstawowego",
+                                    "buyback": true,
+                                    "sameAsBase": false,
+                                    "isUniversal": true,
+                                    "position": 2,
+                                    "coverCode": "COV_BASIC",
+                                    "closureAmountCurrency": null
+                                  }
+                                ],
+                                "limitsAsBaseCover": null,
+                                "sublimitsAsBase": null,
+                                "indemnityEveryEvent": true
+                              },
+                              {
+                                "code": "COV_USA",
+                                "name": "Ekspozycja USA/Kanada",
+                                "title": "Wypadki ubezpieczeniowe na terytorium USA lub Kanady - zgodnie z par. 5 ust. 1 OWU",
+                                "content": "Wypadki ubezpieczeniowe na terytorium USA lub Kanady - zgodnie z par. 5 ust. 1 OWU",
+                                "cardinal": 1,
+                                "position": 2,
+                                "premium": {
+                                  "amount": 86.63,
+                                  "currency": "PLN"
+                                },
+                                "isOwu": null,
+                                "indemnities": [
+                                  {
+                                    "type": "FIRST_RISK",
+                                    "name": "Podlimit na jeden wypadek",
+                                    "value": "1 000 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 1
+                                  },
+                                  {
+                                    "type": "ALL_RISKS",
+                                    "name": "Podlimit na wszystkie wypadki",
+                                    "value": "1 000 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 2
+                                  }
+                                ],
+                                "limits": [
+                                ],
+                                "deductibles": [
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "AMOUNT",
+                                    "name": "Wypadki ubezpieczeniowe na terytorium USA lub Kanady - zgodnie z par. 5 ust. 1 OWU",
+                                    "title": "Wypadki ubezpieczeniowe powstałe na terytorium USA lub Kanady",
+                                    "value": "1 000,00",
+                                    "currency": "PLN",
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": true,
+                                    "isUniversal": false,
+                                    "position": 0,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  }
+                                ],
+                                "limitsAsBaseCover": null,
+                                "sublimitsAsBase": null,
+                                "indemnityEveryEvent": false
+                              },
+                              {
+                                "code": "COV_CL2",
+                                "name": "Klauzula nr 2 Szkody powstałe w związku z Emisją do środowiska",
+                                "title": "Klauzula nr 2 Szkody powstałe w związku z Emisją do środowiska",
+                                "content": "1. Z zachowaniem pozostałych, niezmienionych niniejszą klauzulą postanowień OWU, w tym wyłączeń określonych w §§ 6-8 OWU, rozszerza się zakres ubezpieczenia o odpowiedzialność cywilną Ubezpieczonego za Szkody osobowe lub Szkody rzeczowe powstałe w związku z Emisją do środowiska.\n2. WARTA obejmuje ochroną ubezpieczeniową także koszty sprzątania, w tym koszty działań mające na celu ochronę albo usunięcie zagrożenia dla życia, zdrowia lub mienia.\n3. W zakresie niniejszej klauzuli WARTA ponosi odpowiedzialność, jeżeli spełnione są łącznie następujące warunki:\n1) przyczyna Emisji do środowiska była nagła, niespodziewana i niezależna od woli Ubezpieczonego lub osób, za które ponosi on odpowiedzialność,\n2) rozpoczęcie procesu Emisji do środowiska miało miejsce w okresie ubezpieczenia.",
+                                "cardinal": 1,
+                                "position": 110,
+                                "premium": {
+                                  "amount": 405.01,
+                                  "currency": "PLN"
+                                },
+                                "isOwu": true,
+                                "indemnities": [
+                                  {
+                                    "type": "FIRST_RISK",
+                                    "name": "Podlimit na jeden wypadek",
+                                    "value": "50 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 1
+                                  },
+                                  {
+                                    "type": "ALL_RISKS",
+                                    "name": "Podlimit na wszystkie wypadki",
+                                    "value": "50 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 2
+                                  }
+                                ],
+                                "limits": [
+                                ],
+                                "deductibles": [
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "DESCRIBED",
+                                    "name": "Klauzula nr 2 Szkody powstałe w związku z Emisją do środowiska",
+                                    "title": "Klauzula nr 2 Szkody powstałe w związku z Emisją do środowiska",
+                                    "value": null,
+                                    "currency": null,
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": "Opis (to pole jest drukowane na ofercie/polisie) podstawowa",
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 0,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  },
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "DESCRIBED",
+                                    "name": "Klauzula nr 2 Szkody powstałe w związku z Emisją do środowiska",
+                                    "title": "Franszyza dodatkowa",
+                                    "value": null,
+                                    "currency": null,
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": "Opis (to pole jest drukowane na ofercie/polisie) dodatkowa",
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": true,
+                                    "position": 1,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  },
+                                  {
+                                    "type": "INTEGRAL",
+                                    "kind": "AMOUNT",
+                                    "name": "Klauzula nr 2 Szkody powstałe w związku z Emisją do środowiska",
+                                    "title": "Franszyza dodatkowa",
+                                    "value": "300,00",
+                                    "currency": "PLN",
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": "Opis (to pole jest drukowane na ofercie/polisie) dodatkowa",
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": true,
+                                    "position": 2,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  }
+                                ],
+                                "limitsAsBaseCover": null,
+                                "sublimitsAsBase": null,
+                                "indemnityEveryEvent": false
+                              },
+                              {
+                                "code": "COV_CL4",
+                                "name": "Klauzula nr 4 Szkody w rzeczach ruchomych przekazanych lub udostępnionych w pieczę, dozór, kontrolę lub na przechowanie",
+                                "title": "Klauzula nr 4 Szkody w rzeczach ruchomych przekazanych lub udostępnionych w pieczę, dozór, kontrolę  lub na przechowanie",
+                                "content": "1. Z zachowaniem pozostałych, niezmienionych niniejszą klauzulą postanowień OWU, w tym wyłączeń określonych w §§ 6-8 OWU, rozszerza się zakres ubezpieczenia o odpowiedzialność cywilną Ubezpieczonego za Szkody rzeczowe w rzeczach ruchomych przekazanych lub udostępnionych w pieczę, dozór, kontrolę lub na przechowanie.\n2. Zakres ubezpieczenia klauzuli obejmuje także Szkody rzeczowe związane z niewykonaniem lub niewłaściwym wykonaniem czynności dodatkowych, niezbędnych do wykonania usługi pieczy, dozoru, kontroli lub przechowania.\n3. Ochrona ubezpieczeniowa nie obejmuje jednak odpowiedzialności cywilnej za Szkody w:\n1) rzeczach ruchomych, z których Ubezpieczony korzystał na podstawie umowy najmu, dzierżawy, użyczenia, leasingu lub innej umowy o podobnym charakterze,\n2) rzeczach ruchomych, na których Ubezpieczony wykonywał zgłoszoną do ubezpieczenia działalność (np. obróbka, naprawa, czyszczenie lub inne podobne czynności ingerujące w stan rzeczy),\n3) pojazdach mechanicznych, częściach składowych lub wyposażeniu pojazdów mechanicznych, jeżeli miejsce postoju pojazdu nie spełniało łącznie następujących warunków:\na) stały nadzór fizyczny lub całodobowy monitoring wyposażony w kamery z podglądem miejsca postoju pojazdu i rejestracją zapisu,\nb) pomieszczenie albo plac ogrodzony i oświetlony w porze nocnej.\n4. WARTA nie ponosi odpowiedzialności za Szkody wynikłe z: \n1)  braków inwentarzowych,\n2) wydania rzeczy osobie nieupoważnionej lub omyłkowego wydania rzeczy,\n3) przywłaszczenia  w  rozumieniu  Kodeksu Karnego.5. W razie zaginięcia lub kradzieży rzeczy, o których mowa w ust. 1. Ubezpieczony zobowiązany jest niezwłocznie powiadomić o tym zdarzeniu policję.",
+                                "cardinal": 1,
+                                "position": 130,
+                                "premium": {
+                                  "amount": 1516.06,
+                                  "currency": "PLN"
+                                },
+                                "isOwu": true,
+                                "indemnities": [
+                                  {
+                                    "type": "FIRST_RISK",
+                                    "name": "Podlimit na jeden wypadek",
+                                    "value": "100 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 1
+                                  },
+                                  {
+                                    "type": "ALL_RISKS",
+                                    "name": "Podlimit na wszystkie wypadki",
+                                    "value": "100 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 2
+                                  }
+                                ],
+                                "limits": [
+                                  {
+                                    "name": "Podlimit dla wartości pieniężnych i dzieł sztuki",
+                                    "subLimits": [
+                                      {
+                                        "type": "FIRST_RISK",
+                                        "name": "Podlimit na jeden wypadek",
+                                        "value": "100,00",
+                                        "currency": "PLN",
+                                        "position": 1
+                                      },
+                                      {
+                                        "type": "ALL_RISKS",
+                                        "name": "Podlimit na wszystkie wypadki",
+                                        "value": "100,00",
+                                        "currency": "PLN",
+                                        "position": 2
+                                      }
+                                    ],
+                                    "sameAsBase": null,
+                                    "limitDescription": null,
+                                    "combinedLimits": false,
+                                    "title": "podlimit w ramach Klauzuli nr 4 - dla wartości pieniężnych",
+                                    "position": 0
+                                  }
+                                ],
+                                "deductibles": [
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "AMOUNT",
+                                    "name": "Klauzula nr 4 Szkody w rzeczach ruchomych przekazanych lub udostępnionych w pieczę, dozór, kontrolę  lub na przechowanie",
+                                    "title": "Klauzula nr 4 Szkody w rzeczach ruchomych przekazanych lub udostępnionych w pieczę, dozór, kontrolę lub na przechowanie",
+                                    "value": "100,00",
+                                    "currency": "PLN",
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 0,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  }
+                                ],
+                                "limitsAsBaseCover": null,
+                                "sublimitsAsBase": null,
+                                "indemnityEveryEvent": false
+                              },
+                              {
+                                "code": "COV_CL6",
+                                "name": "Klauzula nr 6 Czyste szkody majątkowe powstałe w związku z wprowadzeniem Produktu do obrotu",
+                                "title": "Klauzula nr 6 Czyste szkody majątkowe powstałe w związku z wprowadzeniem Produktu do obrotu",
+                                "content": "1. Z zachowaniem pozostałych, niezmienionych niniejszą klauzulą postanowień OWU, w tym wyłączeń określonych w §§ 6-8 OWU, rozszerza się zakres ubezpieczenia o odpowiedzialność cywilną Ubezpieczonego za Czyste szkody majątkowe powstałe wskutek:\n1) wadliwości wyrobów powstałych w wyniku trwałego połączenia lub zmieszania wadliwego Produktu z innymi rzeczami,\n2) wadliwości wyrobów powstałych w wyniku dalszej obróbki wadliwego Produktu,\n3) zamontowania, umocowania lub położenia wadliwego Produktu, który może zostać usunięty i zastąpiony Produktem niewadliwym,\n4) wadliwości wyrobu wytworzonego lub poddanego obróbce przy użyciu maszyn lub urządzeń wprowadzonych do obrotu, serwisowanych lub naprawionych przez Ubezpieczonego.\n2. Na podstawie niniejszej klauzuli WARTA ponosi odpowiedzialność za:\n1) uszczerbek poniesiony przez Osobę trzecią wskutek zmniejszenia lub utraty wartości jej wyrobu,\n2) koszty poniesione przez Osobę trzecią w celu wytworzenia jej wyrobu,\n3) koszty poniesione przez Osobę trzecią na dalszą obróbkę wadliwego Produktu w celu wytworzenia jej wyrobu,\n4) dodatkowe koszty poniesione przez Osobę trzecią w celu usunięcia wadliwości jej wyrobu,\n5) koszty poniesione przez Osobę trzecią w celu usunięcia wadliwego Produktu z jej wyrobu,\n6) koszty poniesione przez Osobę trzecią w celu zamontowania, umocowania lub położenia niewadliwego Produktu,\n7) koszty stanowiące różnicę pomiędzy kosztami poniesionymi przez Osobę trzecią w celu wytworzenia innego wyrobu a ceną sprzedaży tego wyrobu, jeżeli sprzedaż możliwa jest jedynie po cenie niższej niż koszty wytworzenia.\n3. Jeżeli zamiast czynności wymienionych w ust. 2 pkt 5) i 6) może zostać wykonana inna odpowiednia czynność (także mogąca posiadać znamiona poprawienia), wówczas WARTA pokryje koszty niezbędne dla wykonania tej czynności, jednakże maksymalnie do wysokości kosztów, o których mowa ust. 2 pkt 5) i 6);Ochrona ubezpieczeniowa istnieje jednakże pod warunkiem, że Osoba trzecia mogłaby skutecznie żądać od Ubezpieczonego dokonania czynności wymienionych w ust. 2 pkt 5) i 6).\n4. WARTA ponosi także odpowiedzialność za koszty poniesione przez Osobę trzecią:\n1) w celu poszukiwania wadliwego Produktu lub wyrobu zawierającego wadliwy Produkt, w tym także: koszty sortowania, koszty niezbędnych badań lub ekspertyz, koszty podróży, diet, koszty noclegu, dodatki z tytułu nadgodzin, koszty rusztowań, dźwigów i innych urządzeń,\n2) w związku ze składowaniem wadliwego Produktu lub wyrobu zawierającego wadliwy Produkt,\n3) w związku z utylizacją wadliwego wyrobu,\n4) w celu ponownej dostawy Produktu niewadliwego, jednakże pomniejszone o koszt pierwotnej dostawy Produktu,\n5) w wyniku zlecenia Ubezpieczonemu realizacji czynności wymienionych w ust 2 pkt 5) i 6), przy czym część ceny stanowiąca zysk Ubezpieczonego nie jest objęta ubezpieczeniem.\n5. WARTA nie ponosi odpowiedzialności za:\n1) straty lub koszty wynikające z innej przyczyny niż wadliwość Produktu,\n2) koszty poniesione na naprawę lub poprawę samego wadliwego Produktu Ubezpieczonego,\n3) straty lub koszty powstałe wskutek opóźnień wszelkiego rodzaju,\n4) roszczenia z tytułu szkód następczych, wynikających w szczególności z przerwania eksploatacji lub przestoju w produkcji a także spowodowane brakiem możliwości korzystania z wyrobu lub nieruchomości zawierających wadliwy Produkt lub z samego wadliwego wyrobu Osoby trzeciej,\n5) utracone korzyści, które Osoba trzecia mogłaby osiągnąć, gdyby Produkt nie był wadliwy, w tym wynikłe ze spadku przychodów ze sprzedaży rzeczy nie zawierających wadliwego Produktu,\n6) spodziewany zysk, który nie został osiągnięty,\n7) koszty zakupu Produktu wadliwego, jak również ponownego zakupu Produktu pozbawionego wad,\n8) Wypadki ubezpieczeniowe powstałe na terytorium Stanów Zjednoczonych Ameryki lub Kanady wraz z ich terytoriami zależnymi,\n9) wzajemne roszczenia pomiędzy Ubezpieczonymi.\n6. W odniesieniu do ochrony ubezpieczeniowej wynikającej z niniejszej klauzuli Wypadkiem ubezpieczeniowym jest:\n1) połączenie lub zmieszanie wadliwego Produktu z innymi rzeczami po raz pierwszy,\n2) rozpoczęcie obróbki wadliwego Produktu po raz pierwszy,\n3) zamontowanie, umocowanie, położenie wadliwego Produktu po raz pierwszy,\n4) wytworzenie wadliwych wyrobów lub wadliwa obróbka wyrobów po raz pierwszy, przy użyciu maszyn lub urządzeń wprowadzonych do obrotu, serwisowanych lub naprawionych przez Ubezpieczonego.\n7. W zakresie objętym niniejszą klauzulą nie stosuje się wyłączenia szkód z tytułu rękojmi za wady lub gwarancji jakości.",
+                                "cardinal": 1,
+                                "position": 150,
+                                "premium": {
+                                  "amount": 6008.68,
+                                  "currency": "PLN"
+                                },
+                                "isOwu": true,
+                                "indemnities": [
+                                  {
+                                    "type": "FIRST_RISK",
+                                    "name": "Podlimit na jeden wypadek",
+                                    "value": "100 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 1
+                                  },
+                                  {
+                                    "type": "ALL_RISKS",
+                                    "name": "Podlimit na wszystkie wypadki",
+                                    "value": "100 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 2
+                                  }
+                                ],
+                                "limits": [
+                                  {
+                                    "name": "Ekspozycja USA/Kanada",
+                                    "subLimits": [
+                                      {
+                                        "type": "FIRST_RISK",
+                                        "name": "Podlimit na jeden wypadek",
+                                        "value": "10 000,00",
+                                        "currency": "PLN",
+                                        "position": 1
+                                      },
+                                      {
+                                        "type": "ALL_RISKS",
+                                        "name": "Podlimit na wszystkie wypadki",
+                                        "value": "10 000,00",
+                                        "currency": "PLN",
+                                        "position": 2
+                                      }
+                                    ],
+                                    "sameAsBase": null,
+                                    "limitDescription": null,
+                                    "combinedLimits": false,
+                                    "title": "podlimit w ramach Klauzuli nr 6 - Wypadki Ubezpieczeniowe powstałe na terytorium USA lub Kanady",
+                                    "position": 0
+                                  },
+                                  {
+                                    "name": "Podlimit uniwersalny",
+                                    "subLimits": [
+                                      {
+                                        "type": "UNIVERSAL_FIRST_RISK",
+                                        "name": "",
+                                        "value": "20 000,00",
+                                        "currency": "PLN",
+                                        "position": 1
+                                      },
+                                      {
+                                        "type": "UNIVERSAL_ALL_RISKS",
+                                        "name": "",
+                                        "value": "20 000,00",
+                                        "currency": "PLN",
+                                        "position": 2
+                                      }
+                                    ],
+                                    "sameAsBase": null,
+                                    "limitDescription": "opis podlimitu uniwersalnego",
+                                    "combinedLimits": false,
+                                    "title": "Podlimit uniwersalny",
+                                    "position": 1
+                                  }
+                                ],
+                                "deductibles": [
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "MIXED",
+                                    "name": "Klauzula nr 6 Czyste szkody majątkowe powstałe w związku z wprowadzeniem Produktu do obrotu",
+                                    "title": "Klauzula nr 6",
+                                    "value": "1 000,00",
+                                    "currency": "PLN",
+                                    "percent": "10",
+                                    "closureAmount": null,
+                                    "closure": false,
+                                    "opening": true,
+                                    "conditionCode": "SETTLEMENT",
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 0,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  },
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "PERCENTAGE",
+                                    "name": "Klauzula nr 6 Czyste szkody majątkowe powstałe w związku z wprowadzeniem Produktu do obrotu",
+                                    "title": "Klauzula nr 6 - Wypadki Ubezpieczeniowe powstałe poza terenem RP",
+                                    "value": null,
+                                    "currency": "PLN",
+                                    "percent": "10",
+                                    "closureAmount": null,
+                                    "closure": false,
+                                    "opening": true,
+                                    "conditionCode": "SETTLEMENT",
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 1,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  },
+                                  {
+                                    "type": "INTEGRAL",
+                                    "kind": "AMOUNT",
+                                    "name": "Klauzula nr 6 Czyste szkody majątkowe powstałe w związku z wprowadzeniem Produktu do obrotu",
+                                    "title": "Franszyza dodatkowa",
+                                    "value": "200,00",
+                                    "currency": "PLN",
+                                    "percent": null,
+                                    "closureAmount": null,
+                                    "closure": null,
+                                    "opening": null,
+                                    "conditionCode": null,
+                                    "description": "Opis (to pole jest drukowane na ofercie/polisie)",
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": true,
+                                    "position": 3,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  }
+                                ],
+                                "limitsAsBaseCover": null,
+                                "sublimitsAsBase": null,
+                                "indemnityEveryEvent": false
+                              },
+                              {
+                                "code": "COV_CL20",
+                                "name": "Klauzula wibracji",
+                                "title": "Klauzula wibracji",
+                                "content": "1.\tZ zachowaniem pozostałych, niezmienionych niniejszą klauzulą postanowień OWU, w tym wyłączeń określonych w §§ 6-8 OWU, WARTA obejmuje ochroną ubezpieczeniową odpowiedzialność cywilną Ubezpieczonego za Szkody rzeczowe wynikające wyłącznie z całkowitego lub częściowego zawalenia się budynku, budowli lub innego obiektu wskutek wibracji, wstrząsów lub osłabienia elementów nośnych budynku lub budowli. \n2.\tOchrona ubezpieczeniowa istnieje pod warunkiem, że: \n1)\tUbezpieczony, przed rozpoczęciem prac budowlanych, sporządził protokół stwierdzający stan techniczny zagrożonego mienia (dalej jako Protokół). Protokół powinien być sporządzony w sposób zgodny z wymaganiami prawa i sztuki budowlanej biorąc pod uwagę rodzaj występującego zagrożenia, rodzaj i stan zagrożonego mienia oraz sposób i zakres prowadzonych prac budowlanych, \n2)\tw okresie poprzedzającym rozpoczęcie prac budowlanych stan techniczny budynku lub budowli lub innego obiektu był dobry,  co zostało potwierdzone Protokołem i były zastosowane wszystkie niezbędne środki zabezpieczające, \n3)\tw czasie budowy prowadzony będzie monitoring oddziaływań budowy na mienie otaczające. \n3.\tZ zakresu ubezpieczenia wyłączone są: \n1)\twszelkie szkody w mieniu, które nie zostało zinwentaryzowane Protokołem,  \n2)\tszkody polegające na uszkodzeniu nie zagrażającym stabilności budynku lub budowli lub jej użytkownikom, \n3)\troszczenia Osób Trzecich o zastosowanie środków zapobiegających szkodom objętym niniejszą klauzulą, \n4)\twszelkie szkody w mieniu, dla którego w czasie budowy nie był prowadzony monitoring oddziaływań budowy, \n5)\tszkody polegające na spękaniu powierzchni budynku, budowli lub innego obiektu, które nie grozi jego zawaleniem, nie pogarsza jego stabilności i nie zagraża jego użytkownikom (szkody estetyczne), \n6)\tszkody, których wystąpienie można było przewidzieć w związku z rodzajem zastosowanych prac i metod konstrukcyjnych.",
+                                "cardinal": 1,
+                                "position": 300,
+                                "premium": null,
+                                "isOwu": false,
+                                "indemnities": [
+                                  {
+                                    "type": "FIRST_RISK",
+                                    "name": "Podlimit na jeden wypadek",
+                                    "value": "5 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 1
+                                  },
+                                  {
+                                    "type": "ALL_RISKS",
+                                    "name": "Podlimit na wszystkie wypadki",
+                                    "value": "5 000,00",
+                                    "currency": "PLN",
+                                    "combinedLimits": false,
+                                    "position": 2
+                                  }
+                                ],
+                                "limits": [
+                                ],
+                                "deductibles": [
+                                  {
+                                    "type": "REDUCER",
+                                    "kind": "MIXED",
+                                    "name": "Klauzula wibracji",
+                                    "title": "Klauzula wibracji",
+                                    "value": "1 000,00",
+                                    "currency": "PLN",
+                                    "percent": "10",
+                                    "closureAmount": null,
+                                    "closure": false,
+                                    "opening": true,
+                                    "conditionCode": "SETTLEMENT",
+                                    "description": null,
+                                    "buyback": false,
+                                    "sameAsBase": false,
+                                    "isUniversal": false,
+                                    "position": 0,
+                                    "coverCode": null,
+                                    "closureAmountCurrency": null
+                                  }
+                                ],
+                                "limitsAsBaseCover": null,
+                                "sublimitsAsBase": null,
+                                "indemnityEveryEvent": false
+                              }
+                            ],
+                            "provisions": [
+                              {
+                                "kind": "ADD_PRO",
+                                "additionalCode": "ADDPROV_CL9_PROD_SERV",
+                                "name": "Rozszerzania Klauzuli Nr 9 o Czyste szkody majątkowe spowodowane przez Produkt lub usługę",
+                                "value": "Z zachowaniem pozostałych, niezmienionych niniejszą klauzulą, postanowień umowy ubezpieczenia, w tym określonych we wniosku i OWU, strony uzgodniły, że z Klauzuli Nr 9 wykreśla się ust. 2 pkt 1) w ramach podlimitu wskazanego w polisie. Pozostałe punkty ust. 2 Klauzuli nr 9 pozostają bez zmian."
+                              },
+                              {
+                                "kind": "ADD_PRO",
+                                "additionalCode": "ADDPROV_INTDED",
+                                "name": "Franszyza integralna",
+                                "value": "Franszyza integralna - określona w umowie kwota do wysokości której WARTA nie odpowiada za powstałą szkodę. Jeżeli jednak wartość szkody przekroczy tę kwotę, wówczas WARTA wypłaca pełną wysokość wyliczonego odszkodowania."
+                              }
+                            ],
+                            "exclusions": [
+                              {
+                                "kind": "ADD_EXC",
+                                "additionalCode": "ADDEXCL_0",
+                                "name": "Brak szkód",
+                                "value": "Oferta ważna pod warunkiem potwierdzenia braku szkód, od rozpoczęcia działalności."
+                              }
+                            ],
+                            "clauses": [
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "installments": [
+              {
+                "number": 1,
+                "amount": "21 390,52",
+                "currency": "PLN",
+                "due": "2020-11-10"
+              }
+            ],
+            "createdDate": "2020-10-10T00:29:03.888093",
+            "invoiceNumbers": null,
+            "invoice": false,
+            "accountNumber": "96 1140 1010 0000 5437 9100 1350",
+            "swiftBic": null,
+            "limitsAsBase": null,
+            "deductiblesAsBase": null,
+            "isAdvancePremiumDefined": false,
+            "advancePremium": null
+          }
+        ],
+        "bankAccount": null,
+        "policyNumber": null,
+        "oldPolicyNumber": null,
+        "directSales": false,
+        "periodDescription": "omentarz do okresu ubezpieczenia",
+        "periodDefined": true,
+        "fullPeriodDesc": "ROK",
+        "issuer": {
+          "id": "df7374af-3cb9-4d22-9efa-c405af088979",
+          "firstName": "Jarosław",
+          "lastName": "Jankowski",
+          "salesCode": "WROK00076000",
+          "teamName": "Zespół Negocjatorów Wrocław 1",
+          "cokkName": "Centrum Obsługi Klientów Korporacyjnych we Wrocławiu",
+          "postCode": "53-333",
+          "city": "Wrocław",
+          "street": "Powstańców Śląskich",
+          "streetPrefix": "ul.",
+          "houseNumber": "64",
+          "doorNumber": null,
+          "phone": "71 721 156",
+          "mobilePhone": "506 051 426",
+          "email": "jaroslaw.jankowski@warta.pl",
+          "supervisorSalesCode": "WROK00008000"
+        },
+        "coverageYears": 4,
+        "coverageMonths": 4,
+        "coverageDays": 4,
+        "coinsuranceProvisions": [
+          {
+            "coinsuranceProvisionCode": "CP3",
+            "customContent": "Koasekurator Wiodący reprezentuje interesy Ubezpieczycieli wobec Ubezpieczającego w przedmiocie zawarcia i obsługi niniejszej umowy ubezpieczenia, w tym likwidacji szkód.",
+            "createdDate": "2020-12-10T10:13:20.182022",
+            "version": 0,
+            "id": "9266cc51-a1dd-4d01-9c61-c2f81aad6152"
+          },
+          {
+            "coinsuranceProvisionCode": "CP1",
+            "customContent": "Strony uzgadniają, że dla celów niniejszej umowy ubezpieczenia, gdziekolwiek w niniejszej umowie wymieniony jest TUiR WARTA SA lub Ubezpieczyciele, zapis taki będzie rozumiany jako odnoszący się do Ubezpieczycieli.",
+            "createdDate": "2020-12-10T10:13:20.182627",
+            "version": 0,
+            "id": "39c83343-7953-46e4-b810-6d7953017809"
+          },
+          {
+            "coinsuranceProvisionCode": "CP2",
+            "customContent": "Koasekurator Wiodący oraz pozostali Koasekuratorzy wymienieni powyżej ponoszą odpowiedzialność za zobowiązania wynikające z niniejszej umowy ubezpieczenia wyłącznie w proporcji do swoich udziałów koasekuracyjnych. Do umowy mają zastosowanie przepisy kodeksu cywilnego dotyczące zobowiązań podzielnych.",
+            "createdDate": "2020-12-10T10:13:20.183029",
+            "version": 0,
+            "id": "6fbc9108-7e85-40f8-b7ca-d289bf63ef34"
+          }
+        ],
+        "exchangeRates": {
+          "isApplicable": false,
+          "date": null,
+          "exchangeTable": null,
+          "exchangeRates": null
+        },
+        "coinsured": true,
+        "apk": {
+          "status": null,
+          "applicable": false
+        },
+        "auction": false,
+        "paymentStatement": true,
+        "generalAgreement": null,
+        "offerType": "NEW_BUSINESS"
+      }
+    },
+    "template": {
+      "code": "OFERTA_OCOG",
+      "name": "Oferta próbna",
+      "fileName": null,
+      "type": "OFFER_DRAFT",
+      "order": 1,
+      "allVariants": false,
+      "active": true,
+      "technical": true,
+      "fileNameSuffix": "#[RFQ_NUMBER]_OCOGKOAS_#[OFFER_INDEX]_#[TEAM]_#[GENERATION_DATE].pdf"
+    },
+    "metadata": [
+      {
+        "id": null,
+        "key": "Variant",
+        "value": "e09d3c47-be18-4679-bf5e-60267e9f7b12",
+        "translation": "20001202/OCOG/1/1",
+        "document": null,
+        "createdDate": null,
+        "version": 0
+      }
+    ]
+  },
+  "code": "OFERTA_OCOG",
+  "filename": "20001202_OCOGKOAS_1_WROKNEW1_20210111.pdf",
+  "documentNumber": null,
+  "documentType": "oferta"
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="jwt.sec.auth.jmappers.trade.MapperTrade">
+
+    <select id="findByCustname"
+            resultType="String" parameterType="int">
+        SELECT to_char(CUSTOMER_ID) || '. ' || CUST_FIRST_NAME || ' ' || CUST_LAST_NAME || ', ' ||
+               CUST_STREET_ADDRESS1
+        FROM DEMO_CUSTOMERS
+        WHERE CUSTOMER_ID = #{idcust}
+    </select>
+
+</mapper>

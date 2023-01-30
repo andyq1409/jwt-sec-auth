@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +37,7 @@ public class MainController {
     String param;
 
     @PreAuthorize("hasRole('ADMIN')")
+//     /api/main/usrlist
     @GetMapping(value = "/usrlist", produces = "application/json")
     public String usersList(@RequestParam String filtrStr) {
 
@@ -48,7 +48,7 @@ public class MainController {
         }
         logger.info("usersList param: " + param);
         List<DbUser> usrs = mapperUser.filteredUsers(param);
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.setDateFormat(df);

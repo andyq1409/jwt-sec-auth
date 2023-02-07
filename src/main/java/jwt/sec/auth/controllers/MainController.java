@@ -48,7 +48,7 @@ public class MainController {
         }
         logger.info("usersList param: " + param);
         List<DbUser> usrs = mapperUser.filteredUsers(param);
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.setDateFormat(df);

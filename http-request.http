@@ -15,8 +15,8 @@ Authorization: Bearer
 
 ###
 
-GET http://localhost:8080/api/main/usrlist?filtrStr=
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3NTU3ODY3NCwicm9sIjpbIlJPTEVfQURNSU4iXX0.YTFxB_XyUL2n0J7k77pGJpUQVQVKEQrxQ1Rl_-Qo8pI
+GET http://localhost:8080/api/main/usrlist?filtrStr=all
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3NjYzMTU5Mywicm9sIjpbIlJPTEVfQURNSU4iXX0.MrslJok6AvkyYhQW0i46kB9lIj1SwnQ9ofj5IxBzmAA
 
 
 ###

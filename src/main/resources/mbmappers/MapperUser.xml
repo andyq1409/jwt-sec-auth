@@ -20,6 +20,22 @@
         where username = #{login}
     </select>
 
+    <select id="getUser" resultType="jwt.sec.auth.domain.user.DbUser"
+            parameterType="Long">
+        SELECT ID,
+               USERNAME,
+               PASSWORD,
+               NAZWISKO,
+               IMIE,
+               EMAIL,
+               LOCKED,
+               DATA_OD,
+               DATA_DO,
+               DATA_HASLA
+        from jwt_user
+        where id = #{id}
+    </select>
+
     <select id="filteredUsers" resultType="jwt.sec.auth.domain.user.DbUser"
             parameterType="String">
         SELECT ID,
@@ -45,5 +61,19 @@
             = rr.id_role
           and ur.id_user = #{idusr}
     </select>
+    
+    <update id="saveUser"  parameterType="DbUser">
+    	UPDATE JWT_USER
+		SET    USERNAME   = #{username},
+		       PASSWORD   = #{password},
+		       NAZWISKO   = #{nazwisko},
+		       IMIE       = #{imie},
+		       LOCKED     = #{locked},
+		       EMAIL      = #{email, jdbcType=CHAR, javaType=java.lang.String},
+		       DATA_OD    = #{data_od, jdbcType=DATE, javaType=java.sql.Date},
+		       DATA_DO    = #{data_do, jdbcType=DATE, javaType=java.sql.Date},
+		       DATA_HASLA = #{data_hasla, jdbcType=DATE, javaType=java.sql.Date}
+        WHERE ID = #{id}		       
+    </update>
 
 </mapper>

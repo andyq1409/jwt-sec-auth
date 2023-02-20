@@ -11,8 +11,12 @@ public interface MapperUser {
 
     DbUser findByUsername(String login);
 
+    DbUser getUser(Long id);
+
     List<String> getUsrRole(Long idusr);
 
     List<DbUser> filteredUsers(String param);
+    
+    public void saveUser(DbUser user);
 
 }

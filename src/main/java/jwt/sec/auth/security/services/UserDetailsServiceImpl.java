@@ -78,8 +78,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         logger.info("now: " + now.toString());
 
         if (dbuser.getData_do() == null) {
-            dbuser.setData_do(new Timestamp(now.getTime() + 1000 * 60 * 60 * 24 * 1));
-        //    dbuser.setData_do(new Date(now.getTime() + 1000 * 60 * 60 * 24 * 1));
+        //    dbuser.setData_do(new Timestamp(now.getTime() + 1000 * 60 * 60 * 24 * 1));
+            dbuser.setData_do(new Date(now.getTime() + 1000 * 60 * 60 * 24 * 1));
         }
         logger.info("dbuser data_do: " + dbuser.getData_do().toString());
 

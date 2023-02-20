@@ -1,7 +1,7 @@
 package jwt.sec.auth.domain.user;
 
 import java.sql.Date;
-import java.sql.Timestamp;
+//import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,16 +13,16 @@ public class DbUser {
     private String imie;
     private String email;
     private int locked;
-    private Timestamp data_od;
-    private Timestamp data_do;
-    private Timestamp data_hasla;
+    private Date data_od;
+    private Date data_do;
+    private Date data_hasla;
     private Set<String> roles = new HashSet<>();
 
     public DbUser() {
     }
 
     public DbUser(Long id, String username, String password, String nazwisko,
-                  String imie, String email, Timestamp data_od, Timestamp data_do, Timestamp data_hasla) {
+                  String imie, String email, Date data_od, Date data_do, Date data_hasla) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -88,27 +88,27 @@ public class DbUser {
         this.email = email;
     }
 
-    public Timestamp getData_od() {
+    public Date getData_od() {
         return data_od;
     }
 
-    public void setData_od(Timestamp data_od) {
+    public void setData_od(Date data_od) {
         this.data_od = data_od;
     }
 
-    public Timestamp getData_do() {
+    public Date getData_do() {
         return data_do;
     }
 
-    public void setData_do(Timestamp data_do) {
+    public void setData_do(Date data_do) {
         this.data_do = data_do;
     }
 
-    public Timestamp getData_hasla() {
+    public Date getData_hasla() {
         return data_hasla;
     }
 
-    public void setData_hasla(Timestamp data_hasla) {
+    public void setData_hasla(Date data_hasla) {
         this.data_hasla = data_hasla;
     }
 

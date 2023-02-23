@@ -2,6 +2,7 @@ package jwt.sec.auth.jmappers.user;
 
 import java.util.List;
 
+import jwt.sec.auth.domain.user.DbUsrRoles;
 import org.apache.ibatis.annotations.Mapper;
 
 import jwt.sec.auth.domain.user.DbUser;
@@ -13,10 +14,14 @@ public interface MapperUser {
 
     DbUser getUser(Long id);
 
+    List<DbUsrRoles> getUserRoles(Long idusr);
+
     List<String> getUsrRole(Long idusr);
 
     List<DbUser> filteredUsers(String param);
     
-    public void saveUser(DbUser user);
+    void saveUser(DbUser user);
+
+    void insUser(DbUser user);
 
 }

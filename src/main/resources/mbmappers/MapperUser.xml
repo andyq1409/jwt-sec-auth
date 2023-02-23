@@ -53,6 +53,13 @@
         or nazwisko like #{param}
     </select>
 
+    <select id="getUserRoles" resultType="DbUsrRoles" parameterType="Long">
+        select p.id, p.ID_USER, r.ID_ROLE, r.CODE_ROLE, r.DESCR, p.DATE_FROM, p.DATE_TO
+        from jwt_roles r, jwt_user_role p
+        where r.ID_ROLE = p.ID_ROLE (+)
+          and p.ID_USER(+) = #{idusr}
+    </select>
+
     <select id="getUsrRole" resultType="String" parameterType="Long">
         select rr.code_role
         from jwt_user_role ur,
@@ -70,10 +77,21 @@
 		       IMIE       = #{imie},
 		       LOCKED     = #{locked},
 		       EMAIL      = #{email, jdbcType=CHAR, javaType=java.lang.String},
-		       DATA_OD    = #{data_od, jdbcType=DATE, javaType=java.sql.Date},
-		       DATA_DO    = #{data_do, jdbcType=DATE, javaType=java.sql.Date},
-		       DATA_HASLA = #{data_hasla, jdbcType=DATE, javaType=java.sql.Date}
+		       DATA_OD    = #{data_od, jdbcType=DATE, javaType=java.sql.Timestamp},
+		       DATA_DO    = #{data_do, jdbcType=DATE, javaType=java.sql.Timestamp},
+		       DATA_HASLA = #{data_hasla, jdbcType=DATE, javaType=java.sql.Timestamp}
         WHERE ID = #{id}		       
     </update>
+
+
+    <insert id="insUser" parameterType="DbUser" >
+        INSERT INTO JWT_USER (
+        USERNAME, PASSWORD, NAZWISKO, IMIE, EMAIL, LOCKED, DATA_OD, DATA_DO, DATA_HASLA)
+        VALUES (#{username}, #{password}, #{nazwisko}, #{imie}, #{email}, #{locked},
+                #{data_od, jdbcType=DATE, javaType=java.sql.Timestamp},
+                #{data_do, jdbcType=DATE, javaType=java.sql.Timestamp},
+                #{data_hasla, jdbcType=DATE, javaType=java.sql.Timestamp} )
+    </insert>
+
 
 </mapper>

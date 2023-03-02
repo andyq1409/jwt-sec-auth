@@ -56,8 +56,9 @@
     <select id="getUserRoles" resultType="DbUsrRoles" parameterType="Long">
         select p.id, p.ID_USER, r.ID_ROLE, r.CODE_ROLE, r.DESCR, p.DATE_FROM, p.DATE_TO
         from jwt_roles r, jwt_user_role p
-        where r.ID_ROLE = p.ID_ROLE (+)
-          and p.ID_USER(+) = #{idusr}
+        where r.ID_ROLE = p.ID_ROLE
+          and p.ID_USER = #{idusr}
+        order by 5, 6
     </select>
 
     <select id="getUsrRole" resultType="String" parameterType="Long">
@@ -83,6 +84,14 @@
         WHERE ID = #{id}		       
     </update>
 
+    <update id="updUserRole"  parameterType="DbUsrRoles">
+        UPDATE JWT_USER_ROLE
+        SET    ID_ROLE   = #{id_role},
+               DATE_FROM = #{date_from, jdbcType=DATE, javaType=java.sql.Timestamp},
+               DATE_TO   = #{date_to, jdbcType=DATE, javaType=java.sql.Timestamp}
+        WHERE ID = #{id}
+    </update>
+
 
     <insert id="insUser" parameterType="DbUser" >
         INSERT INTO JWT_USER (
@@ -91,6 +100,15 @@
                 #{data_od, jdbcType=DATE, javaType=java.sql.Timestamp},
                 #{data_do, jdbcType=DATE, javaType=java.sql.Timestamp},
                 #{data_hasla, jdbcType=DATE, javaType=java.sql.Timestamp} )
+    </insert>
+
+    <insert id="insUserRole" parameterType="DbUsrRoles" >
+        INSERT INTO JWT_USER_ROLE (
+        ID_USER, ID_ROLE, DATE_FROM, DATE_TO)
+        VALUES ( #{id_user},
+                 #{id_role},
+                 #{data_from, jdbcType=DATE, javaType=java.sql.Timestamp},
+                 #{data_to, jdbcType=DATE, javaType=java.sql.Timestamp} )
     </insert>
 
 

@@ -24,4 +24,8 @@ public interface MapperUser {
 
     void insUser(DbUser user);
 
+    void updUserRole(DbUsrRoles role);
+
+    void insUserRole(DbUsrRoles role);
+
 }

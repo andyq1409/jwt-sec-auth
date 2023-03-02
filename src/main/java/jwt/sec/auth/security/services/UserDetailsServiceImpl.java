@@ -24,6 +24,12 @@ import java.sql.DriverManager;
 import java.sql.Timestamp;
 import java.util.*;
 
+/*
+https://github.com/tanerinal/spring-security-ldap-jwt-mvc
+https://dzone.com/articles/user-authentication-remote-ldap-server
+ */
+
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

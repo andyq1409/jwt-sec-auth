@@ -8,20 +8,20 @@ public class DbUsrRoles {
     private Long id_role;
     private String code_role;
     private String descr;
-    private Timestamp data_from;
-    private Timestamp data_to;
+    private Timestamp date_from;
+    private Timestamp date_to;
 
     public DbUsrRoles() {
     }
 
-    public DbUsrRoles(Long id, Long id_user, Long id_role, String code_role, String descr, Timestamp data_from, Timestamp data_to) {
+    public DbUsrRoles(Long id, Long id_user, Long id_role, String code_role, String descr, Timestamp date_from, Timestamp date_to) {
         this.id = id;
         this.id_user = id_user;
         this.id_role = id_role;
         this.code_role = code_role;
         this.descr = descr;
-        this.data_from = data_from;
-        this.data_to = data_to;
+        this.date_from = date_from;
+        this.date_to = date_to;
     }
 
     public Long getId() {
@@ -64,20 +64,20 @@ public class DbUsrRoles {
         this.descr = descr;
     }
 
-    public Timestamp getData_from() {
-        return data_from;
+    public Timestamp getDate_from() {
+        return date_from;
     }
 
-    public void setData_from(Timestamp data_from) {
-        this.data_from = data_from;
+    public void setDate_from(Timestamp date_from) {
+        this.date_from = date_from;
     }
 
-    public Timestamp getData_to() {
-        return data_to;
+    public Timestamp getDate_to() {
+        return date_to;
     }
 
-    public void setData_to(Timestamp data_to) {
-        this.data_to = data_to;
+    public void setDate_to(Timestamp date_to) {
+        this.date_to = date_to;
     }
 }
 

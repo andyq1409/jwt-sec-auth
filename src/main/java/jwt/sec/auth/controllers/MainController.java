@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -34,7 +33,6 @@ public class MainController {
         this.mapperUser = mapperUser;
     }
 
-
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -43,10 +41,8 @@ public class MainController {
     String param;
 
     @PreAuthorize("hasRole('ADMIN')")
-//     /api/main/usrlist
     @GetMapping(value = "/usrlist", produces = "application/json")
     public String usersList(@RequestParam String filtrStr) {
-
         if (filtrStr.equals("all")) {
             param = "%%";
         } else {
@@ -54,25 +50,18 @@ public class MainController {
         }
         logger.info("usersList param: " + param);
         List<DbUser> usrs = mapperUser.filteredUsers(param);
-
-//		usrs.forEach(entry -> {
-//			List<String> roles = mapperUser.getUsrRole(entry.getId());
-//			entry.setRoles(new HashSet<>(roles));
-//		});
-
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-
         ObjectMapper mapper = new ObjectMapper();
         mapper.setDateFormat(df);
         try {
             jsonStr = mapper.writeValueAsString(usrs);
+            logger.info("usersList json: " + jsonStr);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return jsonStr;
     }
-
+//=================================================================================================
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(value = "/saveUser", produces = "text/plain")
     public String saveUser(@RequestBody DbUser user) {
@@ -102,22 +91,48 @@ public class MainController {
         }
         return "Zapisano.";
     }
-
+//=================================================================================================
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping(value = "/usrRolList", produces = "tapplication/json")
+    @GetMapping(value = "/usrRolList", produces = "application/json")
     public String userRoleList(@RequestParam Long idUser) {
         List<DbUsrRoles> list = mapperUser.getUserRoles(idUser);
-
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-
         ObjectMapper mapper = new ObjectMapper();
         mapper.setDateFormat(df);
         try {
             jsonStr = mapper.writeValueAsString(list);
+            logger.info("usersList userRoleList json: " + jsonStr);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return jsonStr;
+    }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping(value = "/user", produces = "application/json")
+    public String userData(@RequestParam Long idUser) {
+        DbUser usr = mapperUser.getUser(idUser);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setDateFormat(df);
+        try {
+            jsonStr = mapper.writeValueAsString(usr);
+            logger.info("usersList json: " + jsonStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jsonStr;
+    }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping(value = "/updUserRole", produces = "text/plain")
+    public String updUserRole(@RequestBody DbUsrRoles role) {
+        if (role.getId() != 0L) {
+            mapperUser.updUserRole(role);
+        } else {
+            mapperUser.insUserRole(role);
+        }
+        return "Zapisano.";
     }
 
 }

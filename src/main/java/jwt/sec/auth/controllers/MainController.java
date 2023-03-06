@@ -16,6 +16,7 @@ import javax.inject.Inject;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author AQ
@@ -59,6 +60,11 @@ public class MainController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
         return jsonStr;
     }
 //=================================================================================================
@@ -89,6 +95,11 @@ public class MainController {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             mapperUser.insUser(user);
         }
+        try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
         return "Zapisano.";
     }
 //=================================================================================================
@@ -105,6 +116,11 @@ public class MainController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
         return jsonStr;
     }
     //=================================================================================================
@@ -127,7 +143,7 @@ public class MainController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(value = "/updUserRole", produces = "text/plain")
     public String updUserRole(@RequestBody DbUsrRoles role) {
-        if (role.getId() != 0L) {
+        if (role.getId() != 999999999L) {
             mapperUser.updUserRole(role);
         } else {
             mapperUser.insUserRole(role);

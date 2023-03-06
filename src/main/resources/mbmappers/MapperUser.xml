@@ -107,8 +107,8 @@
         ID_USER, ID_ROLE, DATE_FROM, DATE_TO)
         VALUES ( #{id_user},
                  #{id_role},
-                 #{data_from, jdbcType=DATE, javaType=java.sql.Timestamp},
-                 #{data_to, jdbcType=DATE, javaType=java.sql.Timestamp} )
+                 #{date_from, jdbcType=DATE, javaType=java.sql.Timestamp},
+                 #{date_to, jdbcType=DATE, javaType=java.sql.Timestamp} )
     </insert>
 
 

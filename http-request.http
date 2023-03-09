@@ -8,16 +8,16 @@ Content-Type: application/json
 }
 
 ###
-
 GET http://localhost:8080/api/test/all
 Authorization: Bearer
 
-
+###
+GET http://localhost:8080/api/main/usrlist?filtrStr=all
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3OTIwOTg0Mywicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.itwA0Bg2neSMFg1c_onuhqCgdli5GRBrkDqu5qDfwTY
 ###
 
-GET http://localhost:8080/api/main/usrlist?filtrStr=all
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3Nzc3MzA3Nywicm9sIjpbIlJPTEVfQURNSU4iXX0.ZX8QJXtpvHDccIZ4oe3XXSCOdtZsdDzVW7mzAjzPyxo
-
-
+###
+GET http://localhost:8080/api/user/usrChgPasswd?username=ewapit&oldpasswd=szczecin&newpasswd=szczecin
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3OTIxMzA3NCwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.aGR-_gKSLutkHSVkltYJazlnsw8NGP2ILeR75Dg_OBo
 ###
 

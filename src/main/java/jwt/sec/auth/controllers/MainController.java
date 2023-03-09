@@ -127,7 +127,10 @@ public class MainController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(value = "/updUserRole", produces = "text/plain")
     public String updUserRole(@RequestBody DbUsrRoles role) {
-        if (role.getId() != 0L) {
+        logger.info("updUserRole user id: " + role.getId_user() );
+        logger.info("updUserRole role id: " + role.getId_role() );
+        logger.info("updUserRole data od: " + role.getDate_from().toString() );
+        if (role.getId() != 999999999L) {
             mapperUser.updUserRole(role);
         } else {
             mapperUser.insUserRole(role);

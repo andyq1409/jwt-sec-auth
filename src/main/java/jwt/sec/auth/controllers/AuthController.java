@@ -1,6 +1,7 @@
 package jwt.sec.auth.controllers;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -93,6 +94,11 @@ public class AuthController {
         logger.info("imie " + arrOfStr[1]);
         logger.info("nazwisko " + arrOfStr[2]);
         logger.info("e-mail " + arrOfStr[3]);
+        try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} 
         return new
                 ResponseEntity<JwtResponse>(new JwtResponse(arrOfStr[0], arrOfStr[2], arrOfStr[1], arrOfStr[3], roles), headers, HttpStatus.OK);
     }

@@ -3,6 +3,7 @@ package jwt.sec.auth.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jwt.sec.auth.domain.user.DbUser;
 import jwt.sec.auth.domain.user.DbUsrRoles;
+import jwt.sec.auth.domains.DbProduct;
 import jwt.sec.auth.jmappers.user.MapperUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -153,5 +154,39 @@ public class MainController {
         }
         return "Zapisano.";
     }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN') or hasRole('VIEW') or hasRole('WRT')")
+    @GetMapping(value = "/getProds", produces = "application/json")
+    public String getProds( @RequestParam Long id,
+                            @RequestParam String name  ) {
+        logger.info("getProds id: " + id.toString() );
+        logger.info("getProds name: " + name );
+        String pp = "%" + name + "%";
+
+        DbProduct param = new DbProduct();
+        param.setProduct_id(id);
+        param.setProduct_name( pp );
+        param.setProduct_description( pp );
+        logger.info("getProds param: " + param.toString());
+        List<DbProduct> list = mapperUser.getProducts(param);
+
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setDateFormat(df);
+        try {
+            jsonStr = mapper.writeValueAsString(list);
+            logger.info("usersList json: " + jsonStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return jsonStr;
+    }
+
 
 }

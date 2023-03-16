@@ -16,7 +16,7 @@
                DATA_OD,
                DATA_DO,
                DATA_HASLA
-        from jwt_user
+        from DEMO_user
         where username = #{login}
     </select>
 
@@ -32,7 +32,7 @@
                DATA_OD,
                DATA_DO,
                DATA_HASLA
-        from jwt_user
+        from DEMO_user
         where id = #{id}
     </select>
 
@@ -48,14 +48,14 @@
                DATA_OD,
                DATA_DO,
                DATA_HASLA
-        from jwt_user
+        from DEMO_user
         where username like #{param}
         or nazwisko like #{param}
     </select>
 
     <select id="getUserRoles" resultType="DbUsrRoles" parameterType="Long">
         select p.id, p.ID_USER, r.ID_ROLE, r.CODE_ROLE, r.DESCR, p.DATE_FROM, p.DATE_TO
-        from jwt_roles r, jwt_user_role p
+        from DEMO_roles r, DEMO_user_role p
         where r.ID_ROLE = p.ID_ROLE
           and p.ID_USER = #{idusr}
         order by 5, 6
@@ -63,15 +63,15 @@
 
     <select id="getUsrRole" resultType="String" parameterType="Long">
         select rr.code_role
-        from jwt_user_role ur,
-             jwt_roles rr
+        from DEMO_user_role ur,
+             DEMO_roles rr
         where ur.id_role
             = rr.id_role
           and ur.id_user = #{idusr}
     </select>
     
     <update id="saveUser"  parameterType="DbUser">
-    	UPDATE JWT_USER
+    	UPDATE DEMO_USER
 		SET    USERNAME   = #{username},
 		       PASSWORD   = #{password},
 		       NAZWISKO   = #{nazwisko},
@@ -85,7 +85,7 @@
     </update>
 
     <update id="updUserRole"  parameterType="DbUsrRoles">
-        UPDATE JWT_USER_ROLE
+        UPDATE DEMO_USER_ROLE
         SET    ID_ROLE   = #{id_role},
                DATE_FROM = #{date_from, jdbcType=DATE, javaType=java.sql.Timestamp},
                DATE_TO   = #{date_to, jdbcType=DATE, javaType=java.sql.Timestamp}
@@ -94,7 +94,7 @@
 
 
     <insert id="insUser" parameterType="DbUser" >
-        INSERT INTO JWT_USER (
+        INSERT INTO DEMO_USER (
         USERNAME, PASSWORD, NAZWISKO, IMIE, EMAIL, LOCKED, DATA_OD, DATA_DO, DATA_HASLA)
         VALUES (#{username}, #{password}, #{nazwisko}, #{imie}, #{email}, #{locked},
                 #{data_od, jdbcType=DATE, javaType=java.sql.Timestamp},
@@ -103,13 +103,31 @@
     </insert>
 
     <insert id="insUserRole" parameterType="DbUsrRoles" >
-        INSERT INTO JWT_USER_ROLE (
+        INSERT INTO DEMO_USER_ROLE (
         ID_USER, ID_ROLE, DATE_FROM, DATE_TO)
         VALUES ( #{id_user},
                  #{id_role},
                  #{date_from, jdbcType=DATE, javaType=java.sql.Timestamp},
                  #{date_to, jdbcType=DATE, javaType=java.sql.Timestamp} )
     </insert>
+
+    <select id="getProducts" resultType="jwt.sec.auth.domains.DbProduct"
+            parameterType="jwt.sec.auth.domains.DbProduct">
+        SELECT
+        PRODUCT_ID, PRODUCT_NAME, PRODUCT_DESCRIPTION,
+        CATEGORY, PRODUCT_AVAIL, LIST_PRICE,
+        PRODUCT_IMAGE, MIMETYPE, FILENAME,
+        IMAGE_LAST_UPDATE, TAGS
+        FROM DEMO_PRODUCT_INFO where PRODUCT_ID is not null
+        <if test="product_name != null" >
+            and ( PRODUCT_NAME like #{product_name}
+            or PRODUCT_DESCRIPTION like #{product_name} )
+        </if>
+        <if test="product_id != 0" >
+            and PRODUCT_ID = #{product_id}
+        </if>
+        ORDER BY 1
+    </select>
 
 
 </mapper>

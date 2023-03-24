@@ -1,11 +1,11 @@
 package jwt.sec.auth.controllers;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import jakarta.servlet.http.HttpServletResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.Valid;
+import jwt.sec.auth.jmappers.user.MapperUser;
+import jwt.sec.auth.payload.request.LoginRequest;
+import jwt.sec.auth.payload.response.JwtResponse;
+import jwt.sec.auth.security.jwt.JwtUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,35 +18,34 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.util.Assert;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-
-import jwt.sec.auth.jmappers.user.MapperUser;
-import jwt.sec.auth.payload.request.LoginRequest;
-import jwt.sec.auth.payload.response.JwtResponse;
-import jwt.sec.auth.security.jwt.JwtUtils;
+import javax.inject.Inject;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-    @Autowired
-    AuthenticationManager authenticationManager;
+    private final MapperUser mapperUser;
+    private final JwtUtils jwtUtils;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    JwtUtils jwtUtils;
-
-    @Autowired
-    MapperUser mapperUser;
+    @Inject
+    public AuthController(MapperUser mapperUser, JwtUtils jwtUtils, AuthenticationManager authenticationManager) {
+        Assert.notNull(mapperUser, "mapperUser must not be null!");
+        this.mapperUser = mapperUser;
+        Assert.notNull(jwtUtils, "jwtUtils must not be null!");
+        this.jwtUtils = jwtUtils;
+        Assert.notNull(authenticationManager, "authenticationManager must not be null!");
+        this.authenticationManager = authenticationManager;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
@@ -78,15 +77,9 @@ public class AuthController {
         List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-        //	return ResponseEntity.ok(
-        //			new JwtResponse(jwt, 0L, userDetails.getUsername(), "mail", roles));
-
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
         headers.add("Access-Control-Expose-Headers", "X-Authorization");
         headers.add("X-Authorization", "Bearer " + jwt);
-
-
-        //	DbUser dbuser = mapperUser.findByUsername(userDetails.getUsername());
 
         String[] arrOfStr = userDetails.getUsername().split(":");
 
@@ -100,61 +93,6 @@ public class AuthController {
 			e.printStackTrace();
 		} 
         return new
-                ResponseEntity<JwtResponse>(new JwtResponse(arrOfStr[0], arrOfStr[2], arrOfStr[1], arrOfStr[3], roles), headers, HttpStatus.OK);
+                ResponseEntity<>(new JwtResponse(arrOfStr[0], arrOfStr[2], arrOfStr[1], arrOfStr[3], roles), headers, HttpStatus.OK);
     }
-//
-//	@PostMapping("/signup")
-//	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-//		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-//			return ResponseEntity
-//					.badRequest()
-//					.body(new MessageResponse("Error: Username is already taken!"));
-//		}
-//
-//		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-//			return ResponseEntity
-//					.badRequest()
-//					.body(new MessageResponse("Error: Email is already in use!"));
-//		}
-//
-//		// Create new user's account
-//		DbUser user = new DbUser(signUpRequest.getUsername(), 
-//							 signUpRequest.getEmail(),
-//							 encoder.encode(signUpRequest.getPassword()));
-//
-//		Set<String> strRoles = signUpRequest.getRole();
-//		Set<Role> roles = new HashSet<>();
-//
-//		if (strRoles == null) {
-//			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-//					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//			roles.add(userRole);
-//		} else {
-//			strRoles.forEach(role -> {
-//				switch (role) {
-//				case "admin":
-//					Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-//							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//					roles.add(adminRole);
-//
-//					break;
-//				case "mod":
-//					Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-//							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//					roles.add(modRole);
-//
-//					break;
-//				default:
-//					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-//							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//					roles.add(userRole);
-//				}
-//			});
-//		}
-//
-//		user.setRoles(roles);
-//		userRepository.save(user);
-//
-//		return ResponseEntity.ok(new MessageResponse("DbUser registered successfully!"));
-//	}
 }

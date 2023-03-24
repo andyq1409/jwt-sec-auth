@@ -4,12 +4,12 @@ Content-Type: application/json
 
 {
   "username": "ewapit",
-  "password": "szczecin"
+  "password": "szczecinx"
 }
 
 ###
 GET http://localhost:8080/api/main/getProds?id=0&name=
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3OTg1Mjk4Niwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.fQzFeYwxUSHOrZDJ5ZVRI10X2lnImxOc2q6We2DZsI0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY4MDAzNDIxNCwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.GCHcslSCj6Ht-6VlLcb7rVsQ0QLdX7O-hk6ax1jtRW8
 ###
 ###
 GET http://localhost:8080/api/test/all

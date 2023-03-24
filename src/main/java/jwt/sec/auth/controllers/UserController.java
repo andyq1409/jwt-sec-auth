@@ -4,6 +4,7 @@ import jwt.sec.auth.domain.user.DbUser;
 import jwt.sec.auth.jmappers.user.MapperUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +27,7 @@ import java.util.Date;
 @RequestMapping("/api/user")  // api/user/usrChgPasswd
 public class UserController {
 
+    @Autowired
     private final MapperUser mapperUser;
 
     @Inject
@@ -37,7 +39,6 @@ public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
 
     @PreAuthorize("hasRole('ADMIN') or hasRole('VIEW') or hasRole('WRT')")
     @GetMapping(value = "/usrChgPasswd", produces = "text/plain")
@@ -74,8 +75,5 @@ public class UserController {
 
         return "Zapisano";
     }
-
-
-
 
 }

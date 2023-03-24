@@ -31,7 +31,7 @@ public class MainController {
 
     @Inject
     public MainController(MapperUser mapperUser) {
-        Assert.notNull(mapperUser, "MyCollaborator must not be null!");
+        Assert.notNull(mapperUser, "mapperUser must not be null!");
         this.mapperUser = mapperUser;
     }
 
@@ -159,6 +159,7 @@ public class MainController {
     @GetMapping(value = "/getProds", produces = "application/json")
     public String getProds( @RequestParam Long id,
                             @RequestParam String name  ) {
+
         logger.info("getProds id: " + id.toString() );
         logger.info("getProds name: " + name );
         String pp = "%" + name + "%";
@@ -170,12 +171,11 @@ public class MainController {
         logger.info("getProds param: " + param.toString());
         List<DbProduct> list = mapperUser.getProducts(param);
 
-
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setDateFormat(df);
+        ObjectMapper mapper2 = new ObjectMapper();
+        mapper2.setDateFormat(df);
         try {
-            jsonStr = mapper.writeValueAsString(list);
+            jsonStr = mapper2.writeValueAsString(list);
             logger.info("usersList json: " + jsonStr);
         } catch (IOException e) {
             e.printStackTrace();

@@ -115,20 +115,6 @@ public class JwtUtils {
     }
 
     public boolean validateJwtToken(String authToken) throws Exception {
-
-//	  String[] chunks = authToken.split("\\.");
-//	  String tokenWithoutSignature = chunks[0] + "." + chunks[1];
-//	  String signature = chunks[2];
-//	  
-//	  SignatureAlgorithm sa = SignatureAlgorithm.HS512;
-//	  SecretKeySpec secretKeySpec = new SecretKeySpec(jwtSecret.getBytes(), sa.getJcaName());
-//	  
-//	  DefaultJwtSignatureValidator validator = new DefaultJwtSignatureValidator(sa, secretKeySpec);
-//
-//	  if (!validator.isValid(tokenWithoutSignature, signature)) {
-//	      throw new Exception("Could not verify JWT token integrity!");
-//	  }
-
         logger.info("JWT parser start ");
         try {
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);

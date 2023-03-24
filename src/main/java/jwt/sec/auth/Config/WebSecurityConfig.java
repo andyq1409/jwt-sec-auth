@@ -1,5 +1,6 @@
 package jwt.sec.auth.Config;
 
+import jwt.sec.auth.security.CustomLdapAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -30,9 +33,9 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler;
 
-    @Autowired
-    private CustomAuthenticationProvider customIdentityAuthenticationProvider;
-
+//    @Autowired
+//    private CustomAuthenticationProvider customIdentityAuthenticationProvider;
+//    private CustomLdapAuthenticationProvider customIdentityAuthenticationProvider;
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
@@ -44,11 +47,6 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         return new AuthTokenFilter();
     }
 
-//	@Bean
-//	public PasswordEncoder passwordEncoder() {
-//		return new BCryptPasswordEncoder();
-//	}
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
@@ -58,10 +56,15 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .requestMatchers("/**").permitAll()
                 .anyRequest().authenticated();
 
-        http.authenticationProvider(customIdentityAuthenticationProvider);
+    //    http.authenticationProvider(customIdentityAuthenticationProvider);
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

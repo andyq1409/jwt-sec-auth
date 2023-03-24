@@ -9,6 +9,7 @@ import net.sf.jasperreports.engine.query.JsonQueryExecuterFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ldap.NamingException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -23,6 +24,7 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.Timestamp;
 import java.util.*;
+import java.util.jar.Attributes;
 
 /*
 https://github.com/tanerinal/spring-security-ldap-jwt-mvc
@@ -45,11 +47,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     MapperTrade mapperTrade;
 
+    public String mapFromAttributes(Attributes attrs, String key)
+            throws NamingException {
+
+        return (String) attrs.get(key).toString();
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        logger.warn("AqUserDetailService.loadUserByUsername - start");
-
+        logger.warn("UserDetailsServiceImpl - start");
 
         accountNonExpired = true;
         accountNonLocked = true;

@@ -1,0 +1,78 @@
+{
+  "Northwind": {
+    "Customers": [
+      {
+        "Phone": "(171) 555-7788",
+        "PostalCode": "WA1 1DP",
+        "ContactName": "Thomas Hardy",
+        "Fax": "(171) 555-6750",
+        "Address": "120 Hanover Sq.",
+        "CustomerID": "AROUT",
+        "CompanyName": "Around the Horn",
+        "Country": "UK",
+        "City": "London",
+        "ContactTitle": "Sales Representative"
+      },
+      {
+        "Phone": "0921-12 34 65",
+        "PostalCode": "S-958 22",
+        "ContactName": "Christina Berglund",
+        "Fax": "0921-12 34 67",
+        "Address": "Berguvsvägen  8",
+        "CustomerID": "BERGS",
+        "CompanyName": "Berglunds snabbköp",
+        "Country": "Sweden",
+        "City": "Luleå",
+        "ContactTitle": "Order Administrator"
+      },
+      {
+        "Phone": "(604) 555-4729",
+        "PostalCode": "T2F 8M4",
+        "Region": "BC",
+        "ContactName": "Elizabeth Lincoln",
+        "Fax": "(604) 555-3745",
+        "Address": "23 Tsawassen Blvd.",
+        "CustomerID": "BOTTM",
+        "CompanyName": "Bottom-Dollar Markets",
+        "Country": "Canada",
+        "City": "Tsawassen",
+        "ContactTitle": "Accounting Manager"
+      },
+      {
+        "Phone": "(171) 555-1212",
+        "PostalCode": "EC2 5NT",
+        "ContactName": "Victoria Ashworth",
+        "Address": "Fauntleroy Circus",
+        "CustomerID": "BSBEV",
+        "CompanyName": "B's Beverages",
+        "Country": "UK",
+        "City": "London",
+        "ContactTitle": "Sales Representative"
+      },
+      {
+        "Phone": "(11) 555-7647",
+        "PostalCode": "05432-043",
+        "Region": "SP",
+        "ContactName": "Pedro Afonso",
+        "Address": "Av. dos Lusíadas, 23",
+        "CustomerID": "COMMI",
+        "CompanyName": "Comércio Mineiro",
+        "Country": "Brazil",
+        "City": "Sao Paulo",
+        "ContactTitle": "Sales Associate"
+      },
+      {
+        "Phone": "(171) 555-2282",
+        "PostalCode": "WX1 6LT",
+        "ContactName": "Elizabeth Brown",
+        "Fax": "(171) 555-9199",
+        "Address": "Berkeley Gardens 12  Brewery",
+        "CustomerID": "CONSH",
+        "CompanyName": "Consolidated Holdings",
+        "Country": "UK",
+        "City": "London",
+        "ContactTitle": "Sales Representative"
+      }
+    ]
+  }
+}

@@ -103,8 +103,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         if (now.after(dbuser.getData_hasla())) {
             logger.info("Password expired");
-          //  credentialsNonExpired = false;
-            grantedAuthorities.add(new SimpleGrantedAuthority("PASSW_EXPIRED"));
+            credentialsNonExpired = false;
+            //grantedAuthorities.add(new SimpleGrantedAuthority("PASSW_EXPIRED"));
         }
 
         logger.warn("dbuser grantedAuthorities: " + grantedAuthorities.toString());

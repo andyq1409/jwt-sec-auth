@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Fransz_szcz" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="2ecf2d5a-37bd-4f83-bcb0-0f6c9d11e409">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="example.json"/>
+    <property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="374"/>
+    <property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="614"/>
+    <parameter name="P_COV_CODE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["COV_BASIC"]]></defaultValueExpression>
+    </parameter>
+    <queryString language="jsonql">
+        <![CDATA[payload.rfq.offer.variants[0].policyLines.offerings.sections.insuredObjects.coverages.deductibles.*]]>
+    </queryString>
+    <field name="title" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="title"/>
+        <fieldDescription><![CDATA[title]]></fieldDescription>
+    </field>
+    <field name="type" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="type"/>
+        <fieldDescription><![CDATA[type]]></fieldDescription>
+    </field>
+    <field name="kind" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="kind"/>
+        <fieldDescription><![CDATA[kind]]></fieldDescription>
+    </field>
+    <field name="currency" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="currency"/>
+        <fieldDescription><![CDATA[currency]]></fieldDescription>
+    </field>
+    <field name="percent" class="java.lang.Integer">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="percent"/>
+        <fieldDescription><![CDATA[percent]]></fieldDescription>
+    </field>
+    <field name="value" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="value"/>
+        <fieldDescription><![CDATA[value]]></fieldDescription>
+    </field>
+    <field name="name" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="name"/>
+        <fieldDescription><![CDATA[name]]></fieldDescription>
+    </field>
+    <field name="description" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="description"/>
+        <fieldDescription><![CDATA[description]]></fieldDescription>
+    </field>
+    <field name="isUniversal" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="isUniversal"/>
+        <fieldDescription><![CDATA[isUniversal]]></fieldDescription>
+    </field>
+    <field name="position" class="java.lang.Integer">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="position"/>
+        <fieldDescription><![CDATA[position]]></fieldDescription>
+    </field>
+    <field name="closureAmount" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="closureAmount"/>
+        <fieldDescription><![CDATA[closureAmount]]></fieldDescription>
+    </field>
+    <field name="closure" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="closure"/>
+        <fieldDescription><![CDATA[closure]]></fieldDescription>
+    </field>
+    <field name="opening" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="opening"/>
+        <fieldDescription><![CDATA[opening]]></fieldDescription>
+    </field>
+    <field name="conditionCode" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="conditionCode"/>
+        <fieldDescription><![CDATA[conditionCode]]></fieldDescription>
+    </field>
+    <field name="buyback" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="buyback"/>
+        <fieldDescription><![CDATA[buyback]]></fieldDescription>
+    </field>
+    <field name="sameAsBase" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="sameAsBase"/>
+        <fieldDescription><![CDATA[sameAsBase]]></fieldDescription>
+    </field>
+    <field name="coverCode" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="coverCode"/>
+        <fieldDescription><![CDATA[coverCode]]></fieldDescription>
+    </field>
+    <field name="closureAmountCurrency" class="java.lang.String">
+        <property name="net.sf.jasperreports.jsonql.field.expression" value="closureAmountCurrency"/>
+        <fieldDescription><![CDATA[closureAmountCurrency]]></fieldDescription>
+    </field>
+    <sortField name="position"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="20">
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+            <textField>
+                <reportElement x="0" y="0" width="550" height="15" uuid="a0850622-8fe1-4e53-8b78-fd612a520c00">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="Arial Narrow" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Franszyzy dla deductibles " + $P{P_COV_CODE}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <detail>
+        <band height="39" splitType="Stretch">
+            <printWhenExpression><![CDATA[$V{REPORT_COUNT} == 1]]></printWhenExpression>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="0" y="0" width="550" height="15" uuid="bb38a422-8682-404b-8446-1475c8294b81">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="40" y="20" width="510" height="15" uuid="73d35a5d-7da2-4f48-8c6a-8a2e7c7fbecb">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textFieldExpression>
+                    <![CDATA[(($F{kind}.equals( "AMOUNT") && $F{value} !=null && !$F{value}.isEmpty()) ? $F{value} + " PLN" : "") + (($F{kind}.equals( "MIXED") )? $F{percent}+"%" + (($F{conditionCode}.equals( "SETTLEMENT")) ? " odszkodowania" : " odszkodowania") + ", lecz nie mniej niż " + $F{value} + " PLN"  : "") + (($F{value} ==null || $F{value}.isEmpty()) ? $F{description} : "")]]></textFieldExpression>
+            </textField>
+        </band>
+        <band height="62">
+            <printWhenExpression><![CDATA[$V{REPORT_COUNT} == 2]]></printWhenExpression>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="40" y="20" width="510" height="15" uuid="c1f2c8cc-dede-4c62-894c-6897520f29c7">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="20" y="1" width="530" height="15" uuid="9b8452c4-fea6-4341-9ed3-e181a59c464a">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <printWhenExpression><![CDATA[$V{REPORT_COUNT} == 2]]></printWhenExpression>
+                </reportElement>
+                <textFieldExpression><![CDATA["z zastrzeżeniem:"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="60" y="40" width="490" height="15" uuid="3a7aa2c1-86ff-4c98-99ec-0cc140a52887">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textFieldExpression>
+                    <![CDATA[(($F{kind}.equals( "AMOUNT") && $F{value} !=null && !$F{value}.isEmpty()) ? $F{value} + " PLN" : "") + (($F{kind}.equals( "MIXED") )? $F{percent}+"%" + (($F{conditionCode}.equals( "SETTLEMENT")) ? " odszkodowania" : " odszkodowania") + ", lecz nie mniej niż " + $F{value} + " PLN"  : "") + (($F{value} ==null || $F{value}.isEmpty()) ? $F{description} : "")]]></textFieldExpression>
+            </textField>
+        </band>
+        <band height="39">
+            <printWhenExpression><![CDATA[$V{REPORT_COUNT} > 2]]></printWhenExpression>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="40" y="0" width="510" height="15" uuid="3aacc832-2ce5-4e61-9407-641c56cbbbd9">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="60" y="20" width="490" height="15" uuid="7ea8090b-a515-4507-a5a0-4569690bf128">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box>
+                    <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textFieldExpression>
+                    <![CDATA[(($F{kind}.equals( "AMOUNT") && $F{value} !=null && !$F{value}.isEmpty()) ? $F{value} + " PLN" : "") + (($F{kind}.equals( "MIXED") )? $F{percent}+"%" + (($F{conditionCode}.equals( "SETTLEMENT")) ? " odszkodowania" : " odszkodowania") + ", lecz nie mniej niż " + $F{value} + " PLN"  : "") + (($F{value} ==null || $F{value}.isEmpty()) ? $F{description} : "")]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="5">
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+            <line>
+                <reportElement x="0" y="3" width="555" height="1" uuid="0704db1d-0492-43a0-8c1a-cdc2c48fad07">
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+            </line>
+        </band>
+    </summary>
+</jasperReport>

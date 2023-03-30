@@ -120,14 +120,47 @@
         IMAGE_LAST_UPDATE, TAGS
         FROM DEMO_PRODUCT_INFO where PRODUCT_ID is not null
         <if test="product_name != null" >
-            and ( PRODUCT_NAME like #{product_name}
-            or PRODUCT_DESCRIPTION like #{product_name} )
+            and ( upper(PRODUCT_NAME) like '%'||upper(#{product_name})||'%'
+            or upper(PRODUCT_DESCRIPTION) like '%'||upper(#{product_name})||'%' )
         </if>
         <if test="product_id != 0" >
             and PRODUCT_ID = #{product_id}
         </if>
         ORDER BY 1
     </select>
+
+
+    <insert id="insProduct" parameterType="jwt.sec.auth.domains.DbProduct" >
+        INSERT INTO DEMO_PRODUCT_INFO (
+            PRODUCT_ID, PRODUCT_NAME, PRODUCT_DESCRIPTION,
+            CATEGORY, PRODUCT_AVAIL, LIST_PRICE,
+            PRODUCT_IMAGE, MIMETYPE, FILENAME,
+            IMAGE_LAST_UPDATE)
+        VALUES (null,
+                #{product_name},
+                #{product_description},
+                #{category},
+                #{product_avail},
+                #{list_price, jdbcType=DOUBLE},
+                #{product_image, jdbcType=BLOB},
+                #{mimetype},
+                #{filename},
+                #{image_last_update, jdbcType=DATE, javaType=java.sql.Timestamp} )
+    </insert>
+
+    <update id="updProduct"  parameterType="jwt.sec.auth.domains.DbProduct">
+        UPDATE DEMO_PRODUCT_INFO
+        SET    PRODUCT_NAME        = #{product_name},
+               PRODUCT_DESCRIPTION = #{product_description},
+               CATEGORY            = #{category},
+               PRODUCT_AVAIL       = #{product_avail},
+               LIST_PRICE          = #{list_price, jdbcType=DOUBLE},
+               PRODUCT_IMAGE       = #{product_image, jdbcType=BLOB},
+               MIMETYPE            = #{mimetype},
+               FILENAME            = #{filename},
+               IMAGE_LAST_UPDATE   = #{image_last_update, jdbcType=DATE, javaType=java.sql.Timestamp}
+        WHERE  PRODUCT_ID = #{product_id}
+    </update>
 
 
 </mapper>

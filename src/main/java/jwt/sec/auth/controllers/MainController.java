@@ -187,6 +187,27 @@ public class MainController {
         }
         return jsonStr;
     }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping(value = "/saveProduct", produces = "text/plain")
+    public String saveProduct(@RequestBody DbProduct prod) {
+        logger.info("saveProduct nazwa: " + prod.getProduct_name());
+        logger.info("saveProduct plik: " + prod.getFilename());
 
+        if (prod.getProduct_id() != 0L) {
+            mapperUser.updProduct(prod);
+        } else {
+            mapperUser.insProduct(prod);
+        }
+
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return "Zapisano.";
+    }
+    //=================================================================================================
 
 }

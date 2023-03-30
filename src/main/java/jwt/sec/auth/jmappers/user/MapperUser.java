@@ -31,4 +31,8 @@ public interface MapperUser {
 
     List<DbProduct> getProducts(DbProduct product);
 
+    void insProduct(DbProduct prod);
+
+    void updProduct(DbProduct prod);
+
 }

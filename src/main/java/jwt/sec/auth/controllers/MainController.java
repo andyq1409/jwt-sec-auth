@@ -3,6 +3,7 @@ package jwt.sec.auth.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jwt.sec.auth.domain.user.DbUser;
 import jwt.sec.auth.domain.user.DbUsrRoles;
+import jwt.sec.auth.domains.DbCustomer;
 import jwt.sec.auth.domains.DbOrder;
 import jwt.sec.auth.domains.DbProduct;
 import jwt.sec.auth.jmappers.user.MapperUser;
@@ -236,6 +237,34 @@ public class MainController {
         try {
             jsonStr = mapper2.writeValueAsString(list);
             logger.info("usersList json: " + jsonStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return jsonStr;
+    }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN') or hasRole('VIEW') or hasRole('WRT')")
+    @GetMapping(value = "/getCustomers", produces = "application/json")
+    public String getCustomers( @RequestParam Long customer_id,
+                             @RequestParam String cust_last_name) {
+
+        logger.info("getOrders customer: " + cust_last_name );
+
+        DbCustomer param = new DbCustomer();
+        param.setCustomer_id(customer_id);
+        param.setCust_last_name(cust_last_name);
+
+        logger.info("getOrders param: " + param.toString());
+        List<DbCustomer> list = mapperUser.getCustomers(param);
+
+        ObjectMapper mapper2 = new ObjectMapper();
+        try {
+            jsonStr = mapper2.writeValueAsString(list);
         } catch (IOException e) {
             e.printStackTrace();
         }

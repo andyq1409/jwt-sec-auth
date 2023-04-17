@@ -8,8 +8,8 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/main/getProds?id=0&name=
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY4MDAzNDIxNCwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.GCHcslSCj6Ht-6VlLcb7rVsQ0QLdX7O-hk6ax1jtRW8
+GET http://localhost:8080/api/main/getOrders?order_id=0&customer=ny&order_timestamp=2023-02-02+09:20:45
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY4MjE2OTAzNSwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.wvNHamtVeBP6fTgplSKSmIRd15l2D-4wsXdxPRyxJeI
 ###
 ###
 GET http://localhost:8080/api/test/all
@@ -23,3 +23,4 @@ GET http://localhost:8080/api/user/usrChgPasswd?username=ewapit&oldpasswd=szczec
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY3OTcyODYyNSwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.qKbMxkEGE84uK2FBasv6-p3iJS8pgvaJX83DPEcxsoQ
 ###
 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWN1cmUtYXBpIiwiYXVkIjoic2VjdXJlLWFwcCIsInN1YiI6ImV3YXBpdCIsImV4cCI6MTY4MjA3NTYzNiwicm9sIjpbIlJPTEVfQURNSU4iLCJST0xFX1ZJRVciLCJST0xFX1dSVCJdfQ.V4TBIjNxnsk_MIDuA0SgBWMVuZ_MRwh4VxY9DlJfqDw

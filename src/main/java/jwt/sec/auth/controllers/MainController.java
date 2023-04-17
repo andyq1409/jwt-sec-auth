@@ -3,6 +3,7 @@ package jwt.sec.auth.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jwt.sec.auth.domain.user.DbUser;
 import jwt.sec.auth.domain.user.DbUsrRoles;
+import jwt.sec.auth.domains.DbOrder;
 import jwt.sec.auth.domains.DbProduct;
 import jwt.sec.auth.jmappers.user.MapperUser;
 import org.slf4j.Logger;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -207,6 +209,42 @@ public class MainController {
         }
 
         return "Zapisano.";
+    }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN') or hasRole('VIEW') or hasRole('WRT')")
+    @GetMapping(value = "/getOrders", produces = "application/json")
+    public String getOrders( @RequestParam Long order_id,
+                             @RequestParam String customer,
+                             @RequestParam String order_timestamp) {
+
+        logger.info("getOrders customer: " + customer );
+        logger.info("getOrders order_timestamp: " + order_timestamp );
+
+        DbOrder param = new DbOrder();
+        param.setOrder_id(order_id);
+        param.setCustomer(customer);
+        if (order_timestamp.equals("")) {
+            param.setOrder_timestamp(null);
+        } else
+            param.setOrder_timestamp(Timestamp.valueOf(order_timestamp.substring(0,18)));
+        logger.info("getOrders param: " + param.toString());
+        List<DbOrder> list = mapperUser.getOrders(param);
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        ObjectMapper mapper2 = new ObjectMapper();
+        mapper2.setDateFormat(df);
+        try {
+            jsonStr = mapper2.writeValueAsString(list);
+            logger.info("usersList json: " + jsonStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return jsonStr;
     }
     //=================================================================================================
 

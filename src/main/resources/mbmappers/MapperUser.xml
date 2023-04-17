@@ -162,5 +162,25 @@
         WHERE  PRODUCT_ID = #{product_id}
     </update>
 
+    <select id="getOrders" resultType="jwt.sec.auth.domains.DbOrder"
+            parameterType="jwt.sec.auth.domains.DbOrder">
+        SELECT
+            ORDER_ID, ord.CUSTOMER_ID, ORDER_TOTAL,
+            ORDER_TIMESTAMP, USER_NAME, ord.TAGS,
+            CUST_LAST_NAME||' '||CUST_FIRST_NAME CUSTOMER
+        FROM DEMO_ORDERS ord, DEMO_CUSTOMERS cust
+        WHERE ord.CUSTOMER_ID = cust.CUSTOMER_ID
+        <if test="order_id != 0" >
+            and ORDER_ID= #{order_id}
+        </if>
+        <if test="customer != null" >
+            and upper(CUST_LAST_NAME||' '||CUST_FIRST_NAME) like '%'||upper(#{customer})||'%'
+        </if>
+        <if test="order_timestamp != null" >
+            and ORDER_TIMESTAMP >= #{order_timestamp}
+        </if>
+        ORDER BY 1
+    </select>
+
 
 </mapper>

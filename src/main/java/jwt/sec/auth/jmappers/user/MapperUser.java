@@ -3,6 +3,7 @@ package jwt.sec.auth.jmappers.user;
 import java.util.List;
 
 import jwt.sec.auth.domain.user.DbUsrRoles;
+import jwt.sec.auth.domains.DbOrder;
 import jwt.sec.auth.domains.DbProduct;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -34,5 +35,7 @@ public interface MapperUser {
     void insProduct(DbProduct prod);
 
     void updProduct(DbProduct prod);
+
+    List<DbOrder> getOrders(DbOrder order);
 
 }

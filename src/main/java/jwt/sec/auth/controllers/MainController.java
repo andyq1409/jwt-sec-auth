@@ -251,7 +251,7 @@ public class MainController {
     @PreAuthorize("hasRole('ADMIN') or hasRole('VIEW') or hasRole('WRT')")
     @GetMapping(value = "/getCustomers", produces = "application/json")
     public String getCustomers( @RequestParam Long customer_id,
-                             @RequestParam String cust_last_name) {
+                                @RequestParam String cust_last_name) {
 
         logger.info("getOrders customer: " + cust_last_name );
 

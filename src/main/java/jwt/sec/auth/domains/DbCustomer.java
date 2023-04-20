@@ -13,8 +13,9 @@ public class DbCustomer {
 	private String cust_email;
 	private String phone_number1;
 	private String phone_number2;
-	private String url;	
-	
+	private String url;
+	private String state_descr;
+
 	public DbCustomer() {		
 	}	
 	
@@ -104,14 +105,25 @@ public class DbCustomer {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	public String getState_descr() {return state_descr;	}
+	public void setState_descr(String state_descr) {this.state_descr = state_descr;}
+
 	@Override
 	public String toString() {
-		return "DbCustomer [customer_id=" + customer_id + ", cust_first_name=" + cust_first_name + ", cust_last_name="
-				+ cust_last_name + ", cust_street_address1=" + cust_street_address1 + ", cust_street_address2="
-				+ cust_street_address2 + ", cust_city=" + cust_city + ", cust_state=" + cust_state
-				+ ", cust_postal_code=" + cust_postal_code + ", cust_email=" + cust_email + ", phone_number1="
-				+ phone_number1 + ", phone_number2=" + phone_number2 + ", url=" + url + "]";
+		return "DbCustomer{" +
+				"customer_id=" + customer_id +
+				", cust_first_name='" + cust_first_name + '\'' +
+				", cust_last_name='" + cust_last_name + '\'' +
+				", cust_street_address1='" + cust_street_address1 + '\'' +
+				", cust_street_address2='" + cust_street_address2 + '\'' +
+				", cust_city='" + cust_city + '\'' +
+				", cust_state='" + cust_state + '\'' +
+				", cust_postal_code='" + cust_postal_code + '\'' +
+				", cust_email='" + cust_email + '\'' +
+				", phone_number1='" + phone_number1 + '\'' +
+				", phone_number2='" + phone_number2 + '\'' +
+				", url='" + url + '\'' +
+				", state_descr='" + state_descr + '\'' +
+				'}';
 	}
-	
-	
 }

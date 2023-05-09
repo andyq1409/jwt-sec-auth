@@ -5,6 +5,7 @@ import jwt.sec.auth.domain.user.DbUser;
 import jwt.sec.auth.domain.user.DbUsrRoles;
 import jwt.sec.auth.domains.DbCustomer;
 import jwt.sec.auth.domains.DbOrder;
+import jwt.sec.auth.domains.DbOrderItem;
 import jwt.sec.auth.domains.DbProduct;
 import jwt.sec.auth.jmappers.user.MapperUser;
 import org.slf4j.Logger;
@@ -237,6 +238,32 @@ public class MainController {
         try {
             jsonStr = mapper2.writeValueAsString(list);
             logger.info("usersList json: " + jsonStr);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return jsonStr;
+    }
+    //=================================================================================================
+    @PreAuthorize("hasRole('ADMIN') or hasRole('VIEW') or hasRole('WRT')")
+    @GetMapping(value = "/getOrderItems", produces = "application/json")
+    public String getOrderItems( @RequestParam Long order_id) {
+
+        logger.info("getOrderItems order_id: " + order_id );
+
+        DbOrderItem param = new DbOrderItem();
+        param.setOrder_id(order_id);
+        logger.info("getOrderItems param: " + param.toString());
+        List<DbOrderItem> list = mapperUser.getOrderItems(param);
+
+        ObjectMapper mapper2 = new ObjectMapper();
+        try {
+            jsonStr = mapper2.writeValueAsString(list);
+            logger.info("getOrderItems json: " + jsonStr);
         } catch (IOException e) {
             e.printStackTrace();
         }

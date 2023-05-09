@@ -181,6 +181,21 @@
         </if>
         ORDER BY 1
     </select>
+
+
+    <select id="getOrderItems" resultType="jwt.sec.auth.domains.DbOrderItem"
+            parameterType="jwt.sec.auth.domains.DbOrderItem">
+        SELECT
+        ORDER_ITEM_ID, ORDER_ID, DEMO_ORDER_ITEMS.PRODUCT_ID,
+        UNIT_PRICE, QUANTITY, PRODUCT_NAME, PRODUCT_DESCRIPTION, LIST_PRICE,
+        UNIT_PRICE * QUANTITY ITEM_VALUE
+        FROM DEMO_ORDER_ITEMS, DEMO_PRODUCT_INFO
+        where DEMO_ORDER_ITEMS.PRODUCT_ID = DEMO_PRODUCT_INFO.PRODUCT_ID
+        <if test="order_id != 0" >
+            and ORDER_ID= #{order_id}
+        </if>
+        ORDER BY 1
+    </select>
     
     <select id="getCustomers" resultType="jwt.sec.auth.domains.DbCustomer"
             parameterType="jwt.sec.auth.domains.DbCustomer">

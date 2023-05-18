@@ -68,7 +68,7 @@ public class JwtUtils {
                 .setIssuer("secure-api")
                 .setAudience("secure-app")
                 .setSubject(arrOfStr[0])
-                .setExpiration(new Date(System.currentTimeMillis() + 600000))
+                .setExpiration(new Date(System.currentTimeMillis() + 180000))
                 .claim("rol", roles)
                 .compact();
 
